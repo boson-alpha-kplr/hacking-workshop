@@ -10,8 +10,8 @@ Nmap est installé par défaut sur les distributions Kali Linux.<br/>
 - Nmap est accessible en tapant nmap dans la ligne de commande du terminal, suivi de certaines options, que nous verrons plus tard.<br/>
 Tout ce dont vous aurez besoin pour cela est le menu d'aide pour nmap (accessible avec nmap -h) et/ou la page de manuel nmap (accessible avec man nmap).
 
-Vous trouverez ci-dessous une vidéo explicatives :<br/>
-https://www.youtube.com/watch?v=4t4kBkMsDbQ
+Vous trouverez ci-dessous la documentation officielle :<br/>
+https://nmap.org/docs.html
 
 ---
 
