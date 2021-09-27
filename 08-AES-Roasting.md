@@ -8,7 +8,7 @@ Nous continuerons à utiliser Rubeus comme nous l'avons fait avec le kerberoasti
 
 Il existe également d'autres outils pour la torréfaction AS-REP tels que kekeo et GetNPUsers.py d'Imppacket. Rubeus est plus facile à utiliser car il trouve automatiquement les utilisateurs AS-REP Roastable alors qu'avec GetNPUsers, vous devez énumérer les utilisateurs au préalable et savoir quels utilisateurs peuvent être AS-REP Roastable.
 
-J'ai déjà compilé et mis Rubeus sur la machine.
+Rubeus est déjà copilé sur la machine cible
 
 **Aperçu du Roasting AS-REP** -
 
