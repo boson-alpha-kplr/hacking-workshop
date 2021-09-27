@@ -40,11 +40,19 @@ Ne désactivez pas la pré-authentification Kerberos, sauf si cela est nécessai
 Quel type de hachage utilise AS-REP Roasting ?
 
 Quel utilisateur est vulnérable au Roasting AS-REP ?
-
+```
+reponse
+```
 Quel est le mot de passe de l'utilisateur ?
-
+```
+reponse
+```
 Quel administrateur est vulnérable au Roasting AS-REP ?
-
+```
+reponse
+```
 Quel est le mot de passe de l'administrateur ?
-
+```
+reponse
+```
 ---
