@@ -1,4 +1,4 @@
-### Passage de Ticket avec Mimikatz
+## Passage de Ticket avec Mimikatz
 
 Mimikatz est un outil de post-exploitation très populaire et puissant le plus couramment utilisé pour vider les informations d'identification des utilisateurs à l'intérieur d'un réseau Active Directory, mais vous pouvez également utiliser mimikatz pour vider un TGT de la mémoire LSASS.
 
@@ -112,12 +112,12 @@ Cette attaque ne fonctionnera pas sans d'autres machines sur le domaine, mais je
 
 **Répondre aux questions ci-dessous**
   
-Qu'est-ce que le hachage SQLService NTLM ?
+Quel est le hash du SQLService NTLM ?
 ```
 reponse : 
 ```
   
-Qu'est-ce que le hachage administrateur NTLM ?
+Quel est le hash du Administrateur NTLM ?
 ```
 reponse : 
 ```
