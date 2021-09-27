@@ -111,7 +111,7 @@ Le .pcap extension de fichier est principalement associée avec Wireshark; un pr
 
 Analyser le fichier order.pcap et détecter le fichier comportant des requêtes suspectes :
 ```console
-Réponse :
+Réponse : $ tshark ...
 ```
 
 Le script ~/dns-exfil-infil/packetyGrabber.py permet de decrypter les fichiers Wireshark.
@@ -137,7 +137,7 @@ Aller dans le dossier ci-dessous :
 ```
 Parmi les fichiers `*.pcap` analyser leur contenu :
 ```console
-Réponse :
+Réponse : $ tshark ...
 ```
 
 Quel fichier contient des requêtes DNS douteuses ?
