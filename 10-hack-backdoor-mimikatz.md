@@ -1,7 +1,8 @@
 # Creation de Backdoor Kerberos avec Mimikatz
 
-En plus de maintenir l'accès à l'aide de billets d'or et d'argent, mimikatz a un autre atout dans ses manches lorsqu'il s'agit d'attaquer Kerberos.  
-Contrairement aux attaques par ticket d'or et d'argent, une porte dérobée Kerberos est beaucoup plus subtile car elle agit de la même manière qu'un rootkit en s'implantant dans la mémoire de la forêt de domaines, ce qui lui permet d'accéder à n'importe laquelle des machines avec un mot de passe principal.
+En plus de maintenir l'accès à l'aide de "billets d'or et d'argent" :crown:, mimikatz a un autre atout dans ses manches lorsqu'il s'agit d'attaquer Kerberos.  
+
+Contrairement aux attaques par ticket classiques, une porte dérobée Kerberos est beaucoup plus subtile car elle agit de la même manière qu'un rootkit en s'implantant dans la mémoire de la forêt de domaines, ce qui lui permet d'accéder à n'importe laquelle des machines avec un mot de passe principal.
 
 La porte dérobée Kerberos fonctionne en implantant une clé squelette (_skeleton key_) qui abuse de la façon dont l'AS-REQ valide les horodatages chiffrés. Une clé squelette ne fonctionne qu'avec le cryptage Kerberos RC4.
 
