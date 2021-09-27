@@ -47,41 +47,37 @@ $ sudo apt-get install tshark
 
 Sous Windows, quelle commande utiliser pour requêter un enregistrement txt pour YouTube.com ?
 ```console
-Réponse : nslookup type=txt youtube.com
+Réponse : 
 ```
 
 Sous Linux, quelle commande utiliser pour requêter un enregistrement txt pour Facebook.com ?
 ```console
-Réponse : dig -t txt facebook.com
+Réponse : 
 ```
 
 Quel type d'adresses IP stocke le AAAA avec le nom de hôte ?
 ```console
-Réponse : IPv6
+Réponse : 
 ```
 
-Le nombre maximum de caracttères pour un enrigrement DNS est de 256. Vrai/Faux ?
+Le nombre maximum de caractères pour un enrigrement DNS est de 256. Vrai/Faux ?
 ```console
-Réponse : Faux
+Réponse : 
 ```
 
 Quel enregistrement DNS donne le nom du domaine en reverse-lookup ?
 ```console
-Réponse : PTR
+Réponse : 
 ```
 
 Quel serait le résultat d'un reverse-lookup pour l'adresse IPv4 suivante : 192.168.203.2 ?
 ```console
-$ dig -x 192.168.203.2
-```
-
-```console
-Réponse : 2.203.168.192.in-addr.arpa
+Réponse : 
 ```
 
 Quelle est la taille maximale d'un nom DNS ? (en incluant les points!)
 ```console
-Réponse : 253
+Réponse : 
 ```
 
 ---
@@ -96,7 +92,7 @@ Cela consiste à ajouter des chaînes contenant le « butin » souhaité aux req
   <img src="https://cdn.discordapp.com/attachments/798799811482353734/807298488881643550/exfil.png"/>
 </p>
 
-Se connecter à la machine cible en SHH en utilisant les crédentials :
+Se connecter à la machine cible en SSH en utilisant les crédentials :
 * Utilsateur : user
 * Mot de passe : P@ssword01
 
@@ -115,7 +111,7 @@ Le .pcap extension de fichier est principalement associée avec Wireshark; un pr
 
 Analyser le fichier order.pcap et détecter le fichier comportant des requêtes suspectes :
 ```console
-$ tshark -r order.pcap -T fields -e dns.qry.name > DNS_names.txt
+Réponse :
 ```
 
 Le script ~/dns-exfil-infil/packetyGrabber.py permet de decrypter les fichiers Wireshark.
@@ -127,12 +123,12 @@ Ignorer l'exception levée à la fin du script.
 
 Quel est le nom de la première transation ? 
 ```console
-Réponse : Network Equip.
+Réponse : 
 ```
 
 Quel est le montant de la transaction Firewall ?
 ```console
-Réponse : 2500
+Réponse : 
 ```
 
 Aller dans le dossier ci-dessous :
@@ -141,12 +137,12 @@ Aller dans le dossier ci-dessous :
 ```
 Parmi les fichiers `*.pcap` analyser leur contenu :
 ```console
-tshark -r cap1.pcap -T fields -e dns.qry.name
+Réponse :
 ```
 
 Quel fichier contient des requêtes DNS douteuses ?
 ```console
-Réponse : cap3.pcap
+Réponse : 
 ```
 
 ```console
@@ -155,7 +151,7 @@ python3 ~/dns-exfil-infil/packetyGrabber.py
 
 Trouver le texte récupéré après avoir décodé les données en utilisant le programe Pyhton packetyGrabber.py qui se trouve dans le dossier `~/dns-exfil-infil/`.
 ```console
-Réponse : administrator:s3cre7P@ssword
+Réponse : 
 ```
 
 ---
@@ -182,5 +178,5 @@ $ python3 ~/dns-exfil-infil/packetySimple.py
 
 Exécuter le script et afficher le résultat :
 ```console
-Réponse : 4.4.0-186-generic
+Réponse : 
 ```
