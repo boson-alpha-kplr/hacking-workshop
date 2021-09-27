@@ -1,5 +1,3 @@
----
-
 ### Roasting AES
 
 - Très similaire à Kerberoasting, AS-REP Roasting vide les hachages krbasrep5 des comptes d'utilisateurs pour lesquels la pré-authentification Kerberos est désactivée.   
