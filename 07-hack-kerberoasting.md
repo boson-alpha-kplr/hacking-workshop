@@ -18,9 +18,9 @@ il se trouve dans le dossier de téléchargements.
 
 ### **Kerberoasting avec Rubeus** 
 
-1.) Téléchargements de cd - accédez au répertoire dans lequel se trouve Rubeus
+1.) ```cd downloads``` - accédez au répertoire dans lequel se trouve Rubeus
 
-2.) Rubeus.exe kerberoast Cela videra le hachage Kerberos de tous les utilisateurs kerberoastable
+2.) ```Rubeus.exe kerberoast``` -  Cela videra le hachage Kerberos de tous les utilisateurs kerberoastable
 
 <img src="https://imgur.com/XZegVqf.png"/>
 
@@ -38,13 +38,13 @@ https://raw.githubusercontent.com/Cryilllic/Active-Directory-Wordlists/master/Pa
 
 Les versions d'Impacket sont instables depuis la 0.9.20. Je suggère d'avoir une installation d'Impacket < 0.9.20
 
-1.) cd /opt accédez à votre répertoire préféré pour enregistrer les outils dans
+1.) ```cd /opt``` -  accédez à votre répertoire préféré pour enregistrer les outils dans
 
 2.) téléchargez le package précompilé à partir de ```https://github.com/SecureAuthCorp/impacket/releases/tag/impacket_0_9_19```
 
-3.) cd Impacket-0.9.19 accédez au répertoire impacket
+3.) ```cd Impacket-0.9.1``` - accédez au répertoire impacket
 
-4.) pip installer. - cela installera toutes les dépendances nécessaires
+4.) ```pip install requirements.txt``` - cela installera toutes les dépendances nécessaires
 
 **Kerberoasting avec Impacket**
 
