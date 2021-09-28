@@ -102,5 +102,8 @@ reponse
 
 ---
 
-### Bonus (non testé) :      
-Essayez d'exploiter les mots de passe collectés de la façon que vous souhaitez
+### Bonus :      
+Comment pouvez vous exploiter les mots de passe collectés de la façon que vous souhaitez
+```
+reponse(s)
+```
