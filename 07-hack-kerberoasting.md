@@ -92,3 +92,7 @@ Quel est le mot de passe SQLService ?
 reponse
 ```
 
+---
+
+### Bonus (non testé) :      
+Essayez d'exploiter les mots de passe collectés de la façon que vous souhaitez
