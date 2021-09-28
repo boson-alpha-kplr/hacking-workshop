@@ -3,10 +3,11 @@
 - Très similaire à Kerberoasting, AS-REP Roasting vide les hachages krbasrep5 des comptes d'utilisateurs pour lesquels la pré-authentification Kerberos est désactivée.   
 - Contrairement à Kerberoasting, ces utilisateurs n'ont pas besoin d'être des comptes de service, la seule exigence pour pouvoir rôtir AS-REP un utilisateur est que l'utilisateur doit avoir désactivé la pré-authentification.
 
-- Nous continuerons à utiliser Rubeus comme nous l'avons fait avec le kerberoasting et la récolte, car Rubeus a une commande très simple et facile à comprendre pour rôtir AS-REP et attaquer les utilisateurs avec la pré-authentification Kerberos désactivée.  Après avoir vidé le hachage de Rubeus, nous utiliserons hashcat afin de casser le hachage krbasrep5.
+- Nous continuerons à utiliser Rubeus comme nous l'avons fait avec le kerberoasting et la récolte, car Rubeus a une commande très simple et facile à comprendre pour roaster AS-REP et attaquer les utilisateurs avec la pré-authentification Kerberos désactivée.  
+- Après avoir vidé le hachage de Rubeus, nous utiliserons hashcat afin de casser le hachage krbasrep5.
 
-- Il existe également d'autres outils pour la torréfaction AS-REP tels que kekeo et GetNPUsers.py d'Imppacket.  
-- Rubeus est plus facile à utiliser car il trouve automatiquement les utilisateurs AS-REP Roastable alors qu'avec GetNPUsers, vous devez énumérer les utilisateurs au préalable et savoir quels utilisateurs peuvent être AS-REP Roastable.
+- Il existe également d'autres outils pour le roasting AS-REP tels que kekeo et GetNPUsers.py d'Imppacket.  
+- Rubeus est plus facile à utiliser car il trouve automatiquement les utilisateurs AS-REP Roastable alors qu'avec GetNPUsers, vous devez énumérer les utilisateurs au préalable et savoir quels utilisateurs peuvent être "AS-REP Roastable".
 
 Rubeus est déjà copilé sur la machine cible 🙌
 
