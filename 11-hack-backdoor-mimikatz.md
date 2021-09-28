@@ -4,7 +4,7 @@ En plus de maintenir l'accès à l'aide de "billets d'or et d'argent" :crown:, m
 
 Contrairement aux attaques par ticket classiques, un backdoor Kerberos est beaucoup plus subtile car il agit de la même manière qu'un rootkit en s'implantant dans la mémoire de la forêt de domaines, ce qui lui permet d'accéder à n'importe laquelle des machines avec un mot de passe principal.
 
-La porte dérobée Kerberos fonctionne en implantant une clé squelette (_skeleton key_) qui abuse de la façon dont l'AS-REQ valide les horodatages chiffrés. Une clé squelette ne fonctionne qu'avec le cryptage Kerberos RC4.
+Le Backdoor Kerberos fonctionne en implantant une clé squelette (_skeleton key_) qui abuse de la façon dont l'AS-REQ valide les horodatages chiffrés. Une clé squelette ne fonctionne qu'avec le cryptage Kerberos RC4.
 
 Le hachage par défaut pour une clé squelette mimikatz est 60BA4FCADC466C7A033C178194C03DF6, ce qui rend le mot de passe -"mimikatz"
 
@@ -12,9 +12,9 @@ Ce workshop ne sera qu'une section de présentation et ne vous obligera pas à f
 
 **Fonctionnement de la clé squelette** -
 
-La clé squelette fonctionne en abusant des horodatages chiffrés AS-REQ.  
+- La clé squelette fonctionne en abusant des horodatages chiffrés AS-REQ.  
 comme expliqué ci-dessus, l'horodatage est chiffré avec le hachage NT des utilisateurs.  
-Le contrôleur de domaine essaie ensuite de déchiffrer cet horodatage avec le hachage NT des utilisateurs, une fois qu'une clé squelette est implantée, le contrôleur de domaine essaie de déchiffrer l'horodatage en utilisant à la fois le hachage NT de l'utilisateur et le hachage NT de la clé squelette vous permettant d'accéder à la forêt du domaine.
+- Le contrôleur de domaine essaie ensuite de déchiffrer cet horodatage avec le hachage NT des utilisateurs, une fois qu'une clé squelette est implantée, le contrôleur de domaine essaie de déchiffrer l'horodatage en utilisant à la fois le hachage NT de l'utilisateur et le hachage NT de la clé squelette vous permettant d'accéder à la forêt du domaine.
 
 
 
@@ -40,7 +40,7 @@ exemple : ```net use c:\\DOMAIN-CONTROLLER\admin$ /user:Administrator mimikatz``
 
 exemple : ```dir \\Desktop-1\c$ /user:Machine1 mimikatz``` - accéder au répertoire de Desktop-1 sans jamais savoir quels utilisateurs ont accès à Desktop-1
 
-La clé squelette ne persistera pas par elle-même car elle s'exécute dans la mémoire, elle peut être scriptée ou persistée à l'aide d'autres outils et techniques, mais cela est hors de portée pour cette pièce.
+La clé squelette ne persistera pas par elle-même car elle s'exécute dans la mémoire, elle peut être scriptée ou persistée à l'aide d'autres outils et techniques, mais cela est hors de portée pour ce worskshop.
 
 **Répondez aux questions** 
 
