@@ -183,7 +183,7 @@ Le mot bonjour est filtré, contournez-le.
 reponse
 ```
 Le filtrage dans le défi 4 est le suivant :
-"Hello"  
+Hello   
 script  
 onerror  
 onsubmit  
