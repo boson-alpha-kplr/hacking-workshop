@@ -11,11 +11,11 @@
 - Le Kerberoasting permet à un utilisateur de demander un ticket de service pour tout service avec un SPN enregistré, puis d'utiliser ce ticket pour déchiffrer le mot de passe du service.   
 - Si le service a un SPN enregistré, il peut être Kerberoastable, mais le succès de l'attaque dépend de la force du mot de passe et s'il est traçable ainsi que des privilèges du compte de service craqué.  
 
-**_Rappel_***
+**_Rappel_**
 
 _Un nom principal de service (SPN) est un identifiant unique d'une instance de service.  
 Les SPN sont utilisés par l'authentification Kerberos pour associer une instance de service à un compte de connexion au service.  
-Cela permet à une application cliente de demander au service d'authentifier un compte même si le client n'a pas le nom du compte.
+Cela permet à une application cliente de demander au service d'authentifier un compte même si le client n'a pas le nom du compte._
 _
 **Enumeration**
 
