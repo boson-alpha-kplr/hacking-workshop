@@ -119,7 +119,12 @@ Quel est le mot de passe SQLService ?
 reponse
 ```
 
-Expliquez en détail comment hashcat arrive a trouver le mot de passe en clair à partir d'un hash ?
+Expliquez en détail comment hashcat arrive a trouver le mot de passe en clair à partir d'un hash 
+```
+reponse
+```
+
+Expliquez  La différence d'attaque entre le Kerberoarting et l'attaque précédente (Harvesting + Brute Force)
 ```
 reponse
 ```
