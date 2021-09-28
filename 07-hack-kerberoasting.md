@@ -32,6 +32,7 @@ Il existe d'autres outils tels que kekeo et Invoke-Kerberoast, mais je vous lais
 Pour vous faciliter la tâche, **Rubeus est déjà mis sur la machine pour vous**. 
 il se trouve dans le dossier de téléchargements.
 
+---
 
 ### **Kerberoasting avec Rubeus** 
 
@@ -49,7 +50,9 @@ Nous utiliserons une liste de mots rockyou modifiée afin d'accélérer le proce
     ```Usage: hashcat [options]... hash|hashfile dictionaryfile```  
        https://hashcat.net/wiki/doku.php?id=hashcat#options 
 
-### **Méthode 2 - Impacket**
+---
+
+### **Kerberoasting avec Impacket**
 
 **Installation d'Impacket**
 
@@ -63,7 +66,9 @@ Les versions d'Impacket sont instables depuis la 0.9.20. Je suggère d'avoir une
 
 4.) ```pip install requirements.txt``` - cela installera toutes les dépendances nécessaires
 
-**Kerberoasting avec Impacket**
+---
+
+**Kerberoasting**
 
 1.) ```cd /usr/share/doc/python3-impacket/examples/ - accédez à l'emplacement de GetUserSPNs.py```
 
@@ -73,6 +78,10 @@ Cependant, cela ne doit pas nécessairement être sur la machine cible et peut �
 3.) ```hashcat -x nnnnn -x n aaaaa bbbbb``` -  cracker ce hachage  
     ```Usage: hashcat [options]... hash|hashfile dictionaryfile```  
        https://hashcat.net/wiki/doku.php?id=hashcat#options 
+
+---
+
+### Now What ? 🤔
 
 **Que peut faire un compte de service ?**
 
