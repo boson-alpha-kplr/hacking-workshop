@@ -91,7 +91,7 @@ Un attaquant crée une URL contenant une charge utile malveillante et l'envoie �
 Le site Web inclut ensuite cette charge utile malveillante de la demande dans la réponse à l'utilisateur. Le navigateur des victimes exécutera la charge utile dans la réponse. Les données recueillies par le script sont ensuite renvoyées à l'attaquant (elles ne sont pas nécessairement envoyées par la victime, mais vers un autre site Web où l'attaquant recueille ensuite ces données - cela empêche l'attaquant de recevoir directement les données de la victime).
 
 Répondre aux questions ci-dessous
-Créez un payload XSS réfléchie qui provoquera une fenêtre contextuelle disant "Bonjour"
+Créez un payload XSS réfléchie qui provoquera une fenêtre contextuelle disant "Hello"
 ```
 reponse
 ```
