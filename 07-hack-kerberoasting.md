@@ -3,7 +3,7 @@
 <img src="https://www.shopenseigne.fr/wp-content/uploads/2020/05/enseigne-lumineuse-double-face-rotisserie-ref-06-shop-enseigne-production-13001-marseille-4.jpg" width="20%" height="20%">
 
 
-<img src="https://raw.githubusercontent.com/mehdi-lamrani/hacking-workshop/main/img/Kerberoasting.png" width="90%" height="90%">
+<img src="https://raw.githubusercontent.com/mehdi-lamrani/hacking-workshop/main/img/Kerberoasting.png">
 
 - Dans cette phase, nous couvrirons l'une des attaques Kerberos les plus populaires : Le Kerberoasting. 
 
