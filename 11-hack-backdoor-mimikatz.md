@@ -1,6 +1,6 @@
 # Creation de Backdoor Kerberos avec Mimikatz
 
-En plus de maintenir l'accès à l'aide de "billets d'or et d'argent" :crown:, mimikatz a un autre atout dans ses manches lorsqu'il s'agit d'attaquer Kerberos.  
+En plus de maintenir l'accès à l'aide de Golden/Silver tickets, mimikatz a un autre atout dans ses manches lorsqu'il s'agit d'attaquer Kerberos.  
 
 Contrairement aux attaques par ticket classiques, un backdoor Kerberos est beaucoup plus subtile car il agit de la même manière qu'un rootkit en s'implantant dans la mémoire de la forêt de domaines, ce qui lui permet d'accéder à n'importe laquelle des machines avec un mot de passe principal.
 
