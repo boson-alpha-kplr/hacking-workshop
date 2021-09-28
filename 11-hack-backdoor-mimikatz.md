@@ -2,17 +2,18 @@
 
 En plus de maintenir l'accès à l'aide de "billets d'or et d'argent" :crown:, mimikatz a un autre atout dans ses manches lorsqu'il s'agit d'attaquer Kerberos.  
 
-Contrairement aux attaques par ticket classiques, une porte dérobée Kerberos est beaucoup plus subtile car elle agit de la même manière qu'un rootkit en s'implantant dans la mémoire de la forêt de domaines, ce qui lui permet d'accéder à n'importe laquelle des machines avec un mot de passe principal.
+Contrairement aux attaques par ticket classiques, un backdoor Kerberos est beaucoup plus subtile car il agit de la même manière qu'un rootkit en s'implantant dans la mémoire de la forêt de domaines, ce qui lui permet d'accéder à n'importe laquelle des machines avec un mot de passe principal.
 
 La porte dérobée Kerberos fonctionne en implantant une clé squelette (_skeleton key_) qui abuse de la façon dont l'AS-REQ valide les horodatages chiffrés. Une clé squelette ne fonctionne qu'avec le cryptage Kerberos RC4.
 
 Le hachage par défaut pour une clé squelette mimikatz est 60BA4FCADC466C7A033C178194C03DF6, ce qui rend le mot de passe -"mimikatz"
 
-Ce ne sera qu'une section de présentation et ne vous obligera pas à faire quoi que ce soit sur la machine, mais je vous encourage à continuer vous-même et à ajouter d'autres machines et à tester en utilisant des clés squelettes avec mimikatz.
+Ce workshop ne sera qu'une section de présentation et ne vous obligera pas à faire quoi que ce soit sur la machine, mais je vous encourage à continuer par vous-même ultérieurement et à ajouter d'autres machines et à tester en utilisant des clés squelettes avec mimikatz.
 
-**Aperçu de la clé squelette** -
+**Fonctionnement de la clé squelette** -
 
-La clé squelette fonctionne en abusant des horodatages chiffrés AS-REQ comme je l'ai dit ci-dessus, l'horodatage est chiffré avec le hachage NT des utilisateurs.  
+La clé squelette fonctionne en abusant des horodatages chiffrés AS-REQ.  
+comme expliqué ci-dessus, l'horodatage est chiffré avec le hachage NT des utilisateurs.  
 Le contrôleur de domaine essaie ensuite de déchiffrer cet horodatage avec le hachage NT des utilisateurs, une fois qu'une clé squelette est implantée, le contrôleur de domaine essaie de déchiffrer l'horodatage en utilisant à la fois le hachage NT de l'utilisateur et le hachage NT de la clé squelette vous permettant d'accéder à la forêt du domaine.
 
 
