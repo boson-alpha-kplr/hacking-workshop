@@ -101,6 +101,10 @@ Cependant, cela ne doit pas nécessairement être sur la machine cible et peut �
 - :no_entry_sign: N'autorisez pas de comptes de service comme administrateurs de domaine :no_entry_sign: :   
   Les comptes de service n'ont pas besoin d'être des administrateurs de domaine, kerberoasting ne sera pas aussi efficace si vous ne faites pas des comptes de service comme administrateurs de domaine.
 
+---
+
+### Questions : 
+
 **Répondre aux questions ci-dessous**
 
 Quel est le mot de passe HTTPService ?
