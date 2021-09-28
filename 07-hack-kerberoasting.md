@@ -129,6 +129,11 @@ Expliquez  La différence d'attaque entre le Kerberoasting et l'attaque précéd
 reponse
 ```
 
+Quel sont les différents butins obtenus pour chaque attaque
+```
+reponses
+```
+
 ---
 
 ### Bonus :      
