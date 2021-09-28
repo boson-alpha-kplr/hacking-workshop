@@ -80,11 +80,11 @@ Cependant, cela ne doit pas nécessairement être sur la machine cible et peut �
 
 **Répondre aux questions ci-dessous**
 
-Qu'est-ce que le mot de passe HTTPService ?
+Quel est le mot de passe HTTPService ?
 ```
 reponse
 ```
-Qu'est-ce que le mot de passe SQLService ?
+Quel est le mot de passe SQLService ?
 ```
 reponse
 ```
