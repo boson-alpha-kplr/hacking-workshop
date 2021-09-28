@@ -1,5 +1,10 @@
 ## Manipulation de DNS
 
+Le formulaire de réponse se trouve à l'emplacement suivant : 
+
+                         https://forms.gle/htrWWf6yGhGvpS7z9
+                         
+                         
 Lors de ce TP nous explorerons les techniques utilisées pour exfiltrer et infiltrer les données à travers des serveurs DNS.<br/>
 
 A quoi servent les serveurs DNS ?<br/>
