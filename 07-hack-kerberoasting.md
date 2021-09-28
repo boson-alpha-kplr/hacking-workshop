@@ -57,8 +57,8 @@ Cependant, cela ne doit pas nécessairement être sur la machine cible et peut �
 
 **Que peut faire un compte de service ?**
 
-- Après avoir déchiffré le mot de passe du compte de service, il existe différentes manières d'exfiltrer des données ou de collecter du butin selon que le compte de service est un administrateur de domaine ou non.  
-- Si le compte de service est un administrateur de domaine, vous disposez d'un contrôle similaire à celui d'un ticket doré/argent et pouvez désormais collecter du butin tel que le dumping du NTDS.dit.  
+- Après avoir déchiffré le mot de passe du compte de service, il existe différentes manières d'exfiltrer des données ou de collecter un butin selon que le compte de service est un administrateur de domaine ou non.  
+- Si le compte de service est un administrateur de domaine, vous disposez d'un contrôle similaire à celui d'un ticket Golden/Silver et pouvez désormais collecter un butin tel que le dumping du NTDS.dit.  
 - Si le compte de service n'est pas un administrateur de domaine, vous pouvez l'utiliser pour vous connecter à d'autres systèmes et faire pivoter ou escalader ou vous pouvez utiliser ce mot de passe piraté pour pulvériser contre d'autres comptes d'administrateur de service et de domaine
 - De nombreuses entreprises peuvent réutiliser des mots de passe identiques ou similaires pour leurs utilisateurs administrateurs de service ou de domaine.   
 - Si vous participez à un test d'intrusion professionnel, sachez comment l'entreprise veut que vous montriez le risque la plupart du temps, elle ne veut pas que vous exfiltrez des données et vous fixera un objectif ou un processus à atteindre afin de montrer le risque à l'intérieur de l'évaluation.
