@@ -1,7 +1,17 @@
 ### Roasting AES
 
 - Très similaire à Kerberoasting, AS-REP Roasting vide les hachages krbasrep5 des comptes d'utilisateurs pour lesquels la pré-authentification Kerberos est désactivée.   
-- Contrairement à Kerberoasting, ces utilisateurs n'ont pas besoin d'être des comptes de service, la seule exigence pour pouvoir rôtir AS-REP un utilisateur est que l'utilisateur doit avoir désactivé la pré-authentification.
+
+- Contrairement à Kerberoasting, ces utilisateurs n'ont pas besoin d'être des comptes de service, la seule exigence pour pouvoir griller AS-REP un utilisateur est que l'utilisateur doit avoir désactivé la pré-authentification.
+
+- **Lecture Utile Préalable** : https://thehackernews.com/2021/09/what-is-as-rep-roasting-attack-really.html
+
+- L'une des premières étapes de l'authentification Kerberos est **la pré-authentification**. La pré-authentification utilise le mot de passe de l'utilisateur pour chiffrer un horodatage (timestamp).   
+- Le contrôleur de domaine (DC) déchiffrera cela pour valider le mot de passe correct et ne pas rejouer une demande précédente (**replay attack**). 
+- <ins>Une vulnérabilité peut donc survenir lorsque la pré-authentification est désactivée.</ins>
+
+- Une fois cette option désactivée, un pirate peut demander des données d'authentification pour n'importe quel utilisateur, et le contrôleur de domaine renverra un ticket d'octroi de ticket (TGT) crypté.  
+-  Il peut ensuite être utilisé pour forcer brutalement dans un environnement hors ligne pour déchiffrer le mot de passe.
 
 - Nous continuerons à utiliser Rubeus comme nous l'avons fait avec le kerberoasting et la récolte, car Rubeus a une commande très simple et facile à comprendre pour roaster AS-REP et attaquer les utilisateurs avec la pré-authentification Kerberos désactivée.  
 - Après avoir vidé le hachage de Rubeus, nous utiliserons hashcat afin de casser le hachage krbasrep5.
