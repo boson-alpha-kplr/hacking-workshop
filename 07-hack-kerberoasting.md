@@ -2,9 +2,15 @@
 
 <img src="https://www.shopenseigne.fr/wp-content/uploads/2020/05/enseigne-lumineuse-double-face-rotisserie-ref-06-shop-enseigne-production-13001-marseille-4.jpg" width="30%" height="30%">
 
-- Dans cette phase, nous couvrirons l'une des attaques Kerberos les plus populaires : Le Kerberoasting.  
+- Dans cette phase, nous couvrirons l'une des attaques Kerberos les plus populaires : Le Kerberoasting. 
+
+- Le Kerberoasting est une attaque post-exploitation qui extrait les hash d'informations d'identification de compte de service d'Active Directory pour les craquer en offline. 
+
+- C'est une attaque courante et omniprésente qui exploite une combinaison de chiffrement faible et de mauvaise hygiène des mots de passe des comptes de service.
+
 - Le Kerberoasting permet à un utilisateur de demander un ticket de service pour tout service avec un SPN enregistré, puis d'utiliser ce ticket pour déchiffrer le mot de passe du service.   
 - Si le service a un SPN enregistré, il peut être Kerberoastable, mais le succès de l'attaque dépend de la force du mot de passe et s'il est traçable ainsi que des privilèges du compte de service craqué.  
+
 - Pour énumérer les comptes Kerberoastable, je suggérerais **un outil comme BloodHound** pour trouver tous les comptes "Kerberoastables", il vous permettra de voir quel type de comptes vous pouvez kerberoast s'ils sont administrateurs de domaine, et quel type de connexions ils ont avec le reste du domaine.  
 C'est un excellent outil pour trouver des comptes à cibler. 
 - Si vous le souhaitez vous pouvez l'exécuter pour explorer le domaine dans un premier temps
