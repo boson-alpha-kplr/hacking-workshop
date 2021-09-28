@@ -124,7 +124,7 @@ Expliquez en détail comment hashcat arrive a trouver le mot de passe en clair �
 reponse
 ```
 
-Expliquez  La différence d'attaque entre le Kerberoarting et l'attaque précédente (Harvesting + Brute Force)
+Expliquez  La différence d'attaque entre le Kerberoasting et l'attaque précédente (Harvesting + Brute Force)
 ```
 reponse
 ```
