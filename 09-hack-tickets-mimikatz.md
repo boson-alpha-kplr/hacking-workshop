@@ -1,6 +1,6 @@
-## Passage de Ticket avec Mimikatz
+## Passage de Ticket Kerberos avec Mimikatz
 
-Mimikatz est un outil de post-exploitation très populaire et puissant le plus couramment utilisé pour vider les informations d'identification des utilisateurs à l'intérieur d'un réseau Active Directory, mais vous pouvez également utiliser mimikatz pour vider un TGT de la mémoire LSASS.
+Mimikatz est un outil de post-exploitation très populaire et puissant le plus couramment utilisé pour dumper les informations d'identification des utilisateurs à l'intérieur d'un réseau Active Directory, mais vous pouvez également utiliser mimikatz pour dumper un TGT de la mémoire LSASS.
 
 Ce ne sera qu'un aperçu de la façon dont fonctionnent les attaques de type « pass the ticket », car THM ne prend actuellement pas en charge les réseaux, mais je vous mets au défi de le configurer sur votre propre réseau.
 
@@ -8,13 +8,13 @@ Vous pouvez exécuter cette attaque sur la machine donnée, mais vous passerez d
 
 **Passage de ticket** 
 
-- Le passage de ticket fonctionne en vidant le TGT de la mémoire LSASS de la machine. 
+- Le passage de ticket fonctionne en dumpant le TGT de la mémoire LSASS de la machine. 
 - Le service de sous-système d'autorité de sécurité locale (LSASS) est un processus de mémoire qui stocke les informations d'identification sur un serveur Active Directory et peut stocker un ticket Kerberos avec d'autres types d'informations d'identification pour agir en tant que garde-porte et accepter ou rejeter les informations d'identification fournies. 
-- Vous pouvez vider les tickets Kerberos de la mémoire LSASS tout comme vous pouvez vider les hachages. 
-- Lorsque vous videz les tickets avec mimikatz, cela nous donnera un ticket .kirbi qui peut être utilisé pour gagner l'administrateur de domaine si un ticket d'administrateur de domaine est dans la mémoire LSASS. 
+- Vous pouvez dumper les tickets Kerberos de la mémoire LSASS tout comme vous pouvez dumper les hachages. 
+- Lorsque vous dumpez les tickets avec mimikatz, cela nous donnera un ticket .kirbi qui peut être utilisé pour gagner l'administrateur de domaine si un ticket d'administrateur de domaine est dans la mémoire LSASS. 
 
 - Cette attaque est idéale pour l'escalade de privilèges et le mouvement latéral s'il existe des tickets de compte de service de domaine non sécurisés. 
-- L'attaque vous permet de passer à l'administrateur de domaine si vous videz le ticket d'un administrateur de domaine, puis d'emprunter l'identité de ce ticket à l'aide d'une attaque PTT mimikatz vous permettant d'agir en tant qu'administrateur de domaine. 
+- L'attaque vous permet de passer à l'administrateur de domaine si vous dumpez le ticket d'un administrateur de domaine, puis d'emprunter l'identité de ce ticket à l'aide d'une attaque PTT mimikatz vous permettant d'agir en tant qu'administrateur de domaine. 
 - Vous pouvez penser à une attaque par laissez-passer comme si la réutilisation d'un ticket existant ne créait ou ne détruisait aucun ticket ici, réutilisait simplement un ticket existant d'un autre utilisateur du domaine et usurpait l'identité de ce ticket.
 
 **Préparez les tickets Mimikatz & Dump** -
@@ -67,7 +67,7 @@ Mimikatz est un outil de post-exploitation très populaire et puissant le plus c
 
 Un Silver Ticket peut parfois être mieux utilisé dans les fiançailles plutôt qu'un Golden Ticket car il est un peu plus discret. Si la furtivité et le fait de ne pas être détecté sont importants, un Silver Ticket est probablement une meilleure option qu'un Golden Ticket, mais l'approche pour en créer un est exactement la même. La principale différence entre les deux tickets est qu'un ticket silver est limité au service ciblé alors qu'un ticket golden a accès à n'importe quel service Kerberos.
 
-Un scénario d'utilisation spécifique pour un Silver Ticket serait que vous souhaitiez accéder au serveur SQL du domaine, mais votre utilisateur compromis actuel n'a pas accès à ce serveur. Vous pouvez trouver un compte de service accessible pour prendre pied en kerberoasting ce service, vous pouvez ensuite vider le hachage du service, puis emprunter l'identité de leur TGT afin de demander un ticket de service pour le service SQL du KDC vous permettant d'accéder au SQL du domaine serveur.
+Un scénario d'utilisation spécifique pour un Silver Ticket serait que vous souhaitiez accéder au serveur SQL du domaine, mais votre utilisateur compromis actuel n'a pas accès à ce serveur. Vous pouvez trouver un compte de service accessible pour prendre pied en kerberoasting ce service, vous pouvez ensuite dumper le hachage du service, puis emprunter l'identité de leur TGT afin de demander un ticket de service pour le service SQL du KDC vous permettant d'accéder au SQL du domaine serveur.
 
 Présentation de KRBTGT
 
@@ -75,17 +75,17 @@ Afin de bien comprendre le fonctionnement de ces attaques, vous devez comprendre
 
 **Aperçu de l'attaque par Golden/Silver ticket -**
 
-Une attaque par Golden Ticket fonctionne en vidant le ticket d'octroi de ticket de n'importe quel utilisateur sur le domaine, ce serait de préférence un administrateur de domaine, mais pour un Golden Ticket, vous videriez le ticket krbtgt et pour un Silver Ticket, vous videriez n'importe quel service ou administrateur de domaine ticket. Cela vous fournira le SID ou l'identifiant de sécurité du compte d'administrateur de service/domaine qui est un identifiant unique pour chaque compte d'utilisateur, ainsi que le hachage NTLM. Vous utilisez ensuite ces détails dans une attaque par Golden Ticket mimikatz afin de créer un TGT qui usurpe l'identité des informations de compte de service données.
+Une attaque par Golden Ticket fonctionne en dumpant le ticket d'octroi de ticket de n'importe quel utilisateur sur le domaine, ce serait de préférence un administrateur de domaine, mais pour un Golden Ticket, vous videriez le ticket krbtgt et pour un Silver Ticket, vous dumperiez n'importe quel service ou administrateur de domaine ticket. Cela vous fournira le SID ou l'identifiant de sécurité du compte d'administrateur de service/domaine qui est un identifiant unique pour chaque compte d'utilisateur, ainsi que le hachage NTLM. Vous utilisez ensuite ces détails dans une attaque par Golden Ticket mimikatz afin de créer un TGT qui usurpe l'identité des informations de compte de service données.
 
 
 
-Videz le hachage krbtgt -
+dumpez le hachage krbtgt -
 
 1.) ```cd downloads && mimikatz.exe``` - accédez au répertoire dans lequel se trouve mimikatz et exécutez mimikatz
 
 2.) ```privilege::debug``` - assurez-vous que ces sorties [privilege '20' ok]
 
-3.) lsadump::lsa /inject /name:krbtgt - Cela videra le hachage ainsi que l'identifiant de sécurité nécessaire pour créer un Golden Ticket. Pour créer un Silver Ticket, vous devez modifier le /name : pour vider le hachage d'un compte d'administrateur de domaine ou d'un compte de service tel que le compte SQLService.
+3.) lsadump::lsa /inject /name:krbtgt - Cela dumpera le hachage ainsi que l'identifiant de sécurité nécessaire pour créer un Golden Ticket. Pour créer un Silver Ticket, vous devez modifier le /name : pour vider le hachage d'un compte d'administrateur de domaine ou d'un compte de service tel que le compte SQLService.
 
 
 
