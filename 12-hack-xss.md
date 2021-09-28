@@ -76,7 +76,7 @@ reponse
 
 ---
   
-### Reflected XSS
+# Reflected XSS
 
 Dans une attaque de script inter-sites réfléchie, la charge utile malveillante fait partie de la demande des victimes au site Web. Le site Web inclut cette charge utile en réponse à l'utilisateur. En résumé, un attaquant doit inciter une victime à cliquer sur une URL pour exécuter sa charge utile malveillante.
 
