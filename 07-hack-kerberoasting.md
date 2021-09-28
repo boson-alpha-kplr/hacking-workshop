@@ -103,6 +103,11 @@ Quel est le mot de passe SQLService ?
 reponse
 ```
 
+Expliquez en détail comment hashcat arrive a trouver le mot de passe en clair à partir d'un hash ?
+```
+reponse
+```
+
 ---
 
 ### Bonus :      
