@@ -1,8 +1,8 @@
 ----
   
-### Golden Ticket avec Mimikatz
+### Golden/Silver Ticket avec Mimikatz
   
-Mimikatz est un outil de post-exploitation très populaire et puissant le plus couramment utilisé pour vider les informations d'identification des utilisateurs à l'intérieur d'un réseau Active Directory, mais vous pouvez également utiliser mimikatz afin de créer un Silver ticket.
+Cette fois nous allon utiliser mimikatz afin de créer dans un premier **un Silver ticket**.
 
 Un Silver Ticket peut parfois être mieux utilisé dans les fiançailles plutôt qu'un Golden Ticket car il est un peu plus discret. Si la furtivité et le fait de ne pas être détecté sont importants, un Silver Ticket est probablement une meilleure option qu'un Golden Ticket, mais l'approche pour en créer un est exactement la même. La principale différence entre les deux tickets est qu'un ticket silver est limité au service ciblé alors qu'un ticket golden a accès à n'importe quel service Kerberos.
 
