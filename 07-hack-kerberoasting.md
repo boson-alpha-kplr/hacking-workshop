@@ -51,6 +51,7 @@ Nous utiliserons une liste de mots rockyou modifiée afin d'accélérer le proce
        https://hashcat.net/wiki/doku.php?id=hashcat#options 
        
 Hint : trouvez le mode hashcat qui convient pour ce type de roasting (5 chiffres)
+Si vous êtes coincés demandez-le au formateur.
 
 ---
 
