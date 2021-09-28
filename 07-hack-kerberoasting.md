@@ -69,12 +69,14 @@ Cependant, cela ne doit pas nécessairement être sur la machine cible et peut �
 - De nombreuses entreprises peuvent réutiliser des mots de passe identiques ou similaires pour leurs utilisateurs administrateurs de service ou de domaine.   
 - Si vous participez à un test d'intrusion professionnel, sachez comment l'entreprise veut que vous montriez le risque la plupart du temps, elle ne veut pas que vous exfiltrez des données et vous fixera un objectif ou un processus à atteindre afin de montrer le risque à l'intérieur de l'évaluation.
 
-**Mitigation : Défendre la forêt**
+---
 
-Se prémunir du Kerberoasting :
+### **Mitigation : Défendre la forêt**
 
-- Opter pour Mots de passe de service forts - Si les mots de passe du compte de service sont forts, le kerberoasting sera inefficace
-- N'autorisez pas de comptes de service comme administrateurs de domaine - Les comptes de service n'ont pas besoin d'être des administrateurs de domaine, kerberoasting ne sera pas aussi efficace si vous ne faites pas des comptes de service comme administrateurs de domaine.
+**Se prémunir du Kerberoasting :**
+
+- :white_check_mark:Opter pour des mots de passe de service forts :muscle: - Si les mots de passe du compte de service sont forts, le kerberoasting sera inefficace
+- :no_entry_sign: N'autorisez pas de comptes de service comme administrateurs de domaine :no_entry_sign: : - Les comptes de service n'ont pas besoin d'être des administrateurs de domaine, kerberoasting ne sera pas aussi efficace si vous ne faites pas des comptes de service comme administrateurs de domaine.
 
 **Répondre aux questions ci-dessous**
 
