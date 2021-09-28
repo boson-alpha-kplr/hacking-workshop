@@ -76,7 +76,7 @@ Les versions d'Impacket sont instables depuis la 0.9.20. Je suggère d'avoir une
 
 Cependant, cela ne doit pas nécessairement être sur la machine cible et peut être effectué à distance.
 
-**_Quelles différences constatez vous entre les résultat de Rubeus et d'Impacket ?_**
+**_Quelles différences constatez vous entre les résultats de Rubeus et d'Impacket ?_**
 
 3.) ```hashcat -x nnnnn -x n aaaaa bbbbb``` -  cracker ce hachage  
     ```Usage: hashcat [options]... hash|hashfile dictionaryfile```  
