@@ -15,7 +15,7 @@ Rubeus est déjà copilé sur la machine cible 🙌
 
 - Lors de la pré-authentification, le hachage des utilisateurs sera utilisé pour chiffrer un horodatage que le contrôleur de domaine tentera de déchiffrer pour valider que le bon hachage est utilisé et ne relit pas une demande précédente.  
 - Après avoir validé l'horodatage, le KDC émettra un TGT pour l'utilisateur.  
-- Si la pré-authentification est désactivée, vous pouvez demander des données d'authentification pour n'importe quel utilisateur et le KDC renverra un TGT crypté qui peut être craqué hors ligne car le KDC saute l'étape de validation que l'utilisateur est vraiment ce qu'il prétend être.
+- Si la pré-authentification est désactivée, vous pouvez demander des données d'authentification pour n'importe quel utilisateur et le KDC renverra un TGT crypté qui peut être craqué hors ligne car le KDC saute l'étape de validation dufait que "l'utilisateur est vraiment ce qu'il prétend être".
 
 **Vidange des hachages KRBASREP5 avec Rubeus** -
 
