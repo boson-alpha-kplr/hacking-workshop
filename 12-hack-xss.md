@@ -140,7 +140,7 @@ Sur le XSS Playground, accédez à l'onglet Analyse IP/Port et passez en revue u
   
 Comprendre le script de base du POC.
 
-**Optionnel :** Créez ensuite un fichier sur votre ordinateur avec le script, modifiez-le en fonction de votre réseau et exécutez-le. Voyez s'il récupère l'un de vos appareils sur lesquels un serveur Web est en cours d'exécution.
+**Optionnel** : Créez ensuite un fichier sur votre ordinateur avec le script, modifiez-le en fonction de votre réseau et exécutez-le. Voyez s'il récupère l'un de vos appareils sur lesquels un serveur Web est en cours d'exécution.
 
 ---
   
