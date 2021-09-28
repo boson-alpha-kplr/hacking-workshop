@@ -6,17 +6,17 @@ Une application Web est vulnérable au XSS si elle utilise une entrée utilisate
 
 L'étendue de la gravité de cette vulnérabilité dépend du type de XSS, qui est normalement divisé en deux catégories : persistant/stocké et reflété. En fonction de laquelle, les attaques suivantes sont possibles :
 
-- Vol de cookie - Voler votre cookie à partir d'une session authentifiée, permettant à un attaquant de se connecter en tant que vous sans avoir à fournir lui-même une authentification.
+- **Vol de cookie** - Voler votre cookie à partir d'une session authentifiée, permettant à un attaquant de se connecter en tant que vous sans avoir à fournir lui-même une authentification.
 
-- Keylogging - Un attaquant peut enregistrer un écouteur d'événement clavier et envoyer toutes vos frappes à son propre serveur.
+- **Keylogging** - Un attaquant peut enregistrer un écouteur d'événement clavier et envoyer toutes vos frappes à son propre serveur.
 
-- Instantané de webcam - En utilisant les capacités HTML5, il est même possible de prendre des instantanés à partir d'une webcam d'ordinateur compromise.
+- **Instantané de webcam** - En utilisant les capacités HTML5, il est même possible de prendre des instantanés à partir d'une webcam d'ordinateur compromise.
 
-- Phishing - Un attaquant pourrait soit insérer de faux formulaires de connexion dans la page, soit vous rediriger vers un clone d'un site vous incitant à révéler vos données sensibles.
+- **Phishing** - Un attaquant pourrait soit insérer de faux formulaires de connexion dans la page, soit vous rediriger vers un clone d'un site vous incitant à révéler vos données sensibles.
 
-- Balayage des ports - Vous avez bien lu. Vous pouvez utiliser le XSS stocké pour analyser un réseau interne et identifier d'autres hôtes sur leur réseau.
+- **Balayage des ports** - Vous avez bien lu. Vous pouvez utiliser le XSS stocké pour analyser un réseau interne et identifier d'autres hôtes sur leur réseau.
 
-- Autres exploits basés sur le navigateur - Il existe des millions de possibilités avec XSS.
+- **Autres exploits basés sur le navigateur** - Il existe des millions de possibilités avec XSS.
 
 Qui saurait que tout cela était possible en visitant simplement une page Web. 
 Certaines mesures sont mises en place pour empêcher que cela ne se produise, par votre navigateur et votre antivirus.
@@ -30,7 +30,7 @@ Ce workshop expliquera les différents types de scripts intersites, les attaques
 
 Les scripts intersites stockés sont le type de XSS le plus dangereux. C'est là qu'une chaîne malveillante provient de la base de données des sites Web. Cela se produit souvent lorsqu'un site Web autorise une entrée utilisateur qui n'est pas nettoyée (supprimer les "mauvaises parties" d'une entrée utilisateur) lorsqu'elle est insérée dans la base de données.
 
-Un exemple :
+**Un exemple :**
 
 Un attaquant crée un payload dans un champ lors de l'inscription à un site Web stocké dans la base de données des sites Web. Si le site Web ne nettoie pas correctement ce champ, lorsque le site affiche ce champ sur la page, il exécutera le payload pour tous ceux qui le visitent.
 
@@ -84,18 +84,21 @@ Cela peut sembler inoffensif car cela nécessite que la victime envoie une deman
 
 Le XSS réfléchi est le type d'attaque XSS le plus courant.
 
-Un exemple
+**Un exemple**
 
 Un attaquant crée une URL contenant une charge utile malveillante et l'envoie à la victime. La victime est trompée par l'attaquant en cliquant sur l'URL. La requête peut être http://example.com/search?keyword=<script>...</script>
 
 Le site Web inclut ensuite cette charge utile malveillante de la demande dans la réponse à l'utilisateur. Le navigateur des victimes exécutera la charge utile dans la réponse. Les données recueillies par le script sont ensuite renvoyées à l'attaquant (elles ne sont pas nécessairement envoyées par la victime, mais vers un autre site Web où l'attaquant recueille ensuite ces données - cela empêche l'attaquant de recevoir directement les données de la victime).
 
 Répondre aux questions ci-dessous
-Créez une charge utile XSS réfléchie qui provoquera une fenêtre contextuelle disant "Bonjour"
-
-Il y a plus à XSS que vous pensez
+Créez un payload XSS réfléchie qui provoquera une fenêtre contextuelle disant "Bonjour"
+```
+reponse
+```
 Créez une charge utile XSS réfléchie qui provoquera une fenêtre contextuelle avec l'adresse IP de votre machine
-
+```
+reponse
+```
 ---
 
 # DOM Based Attacks
@@ -133,7 +136,8 @@ Les XSS peuvent être utilisés pour toutes sortes de méfaits, l'un étant la p
 
 Sur le XSS Playground, accédez à l'onglet Analyse IP/Port et passez en revue un script pour analyser le réseau interne.
 
-Répondre aux questions ci-dessous
+**Répondre aux questions ci-dessous**
+  
 Comprendre le script de base du POC.
 
 **Optionnel :** Créez ensuite un fichier sur votre ordinateur avec le script, modifiez-le en fonction de votre réseau et exécutez-le. Voyez s'il récupère l'un de vos appareils sur lesquels un serveur Web est en cours d'exécution.
@@ -146,7 +150,8 @@ Les scripts intersites peuvent être utilisés pour toutes sortes de méfaits, l
 
 Sur le XSS Playground, accédez à l'onglet Analyse IP/Port et passez en revue un script pour analyser le réseau interne.
 
-Répondre aux questions ci-dessous
+**Répondre aux questions ci-dessous**
+  
 Comprendre le script de base de la preuve de concept.
 
 **Optionnel :**Créez ensuite un fichier sur votre ordinateur avec le script, modifiez-le en fonction de votre réseau et exécutez-le. Voyez s'il récupère l'un de vos appareils sur lesquels un serveur Web est en cours d'exécution.
@@ -170,8 +175,27 @@ Répondre aux questions ci-dessous
 Ignorez le filtre qui supprime toutes les balises de script.
 
 Le mot alerte est filtré, contournez-le.
+```
+reponse
+```  
 Le mot bonjour est filtré, contournez-le.
+  ```
+reponse
+```
 Le filtrage dans le défi 4 est le suivant :
+le mot "Hello"
+script
+onerror
+onsubmit
+onload
+onmouseover
+onfocus
+onmouseout
+onkeypress
+onchange 
+```
+reponse
+```
   
 ---
 
@@ -181,11 +205,12 @@ Le filtrage dans le défi 4 est le suivant :
 
 Il existe de nombreuses façons d'empêcher XSS, voici les 3 façons de continuer à utiliser des scripts intersites pour votre application.
 
-Échappement - Échapper à toutes les entrées de l'utilisateur. Cela signifie que toutes les données que votre application a reçues sont sécurisées avant de les rendre à vos utilisateurs finaux. En échappant à l'entrée de l'utilisateur, les caractères clés des données reçues, mais la page Web ne pourront pas être interprétées de manière malveillante. Par exemple, vous pouvez interdire le rendu des caractères < et >.
+**Escaping** - Sanitizer toutes les entrées de l'utilisateur. Cela signifie que toutes les données que votre application a reçues sont sécurisées avant de les rendre à vos utilisateurs finaux. En échappant à l'entrée de l'utilisateur, les caractères clés des données reçues, mais la page Web ne pourront pas être interprétées de manière malveillante. Par exemple, vous pouvez interdire le rendu des caractères < et >.
+Plus d'infos : https://findanyanswer.com/what-is-escaping-user-input
 
-Validation de l'entrée - Il s'agit du processus permettant de s'assurer que votre application restitue les données correctes et empêche les données malveillantes de nuire à votre site, à votre base de données et à vos utilisateurs. La validation d'entrée interdit la soumission de certains caractères en premier lieu.
+**Validation de l'entrée** - Il s'agit du processus permettant de s'assurer que votre application restitue les données correctes et empêche les données malveillantes de nuire à votre site, à votre base de données et à vos utilisateurs. La validation d'entrée interdit la soumission de certains caractères en premier lieu.
 
-Désinfection - Enfin, la désinfection des données est une défense solide, mais ne doit pas être utilisée seule pour lutter contre les attaques XSS. L'assainissement des entrées utilisateur est particulièrement utile sur les sites qui autorisent le balisage HTML, en changeant l'entrée utilisateur inacceptable dans un format acceptable. Par exemple, vous pouvez nettoyer le caractère < dans l'entité HTML &#60;
+**Désinfection** - Enfin, la désinfection des données est une défense solide, mais ne doit pas être utilisée seule pour lutter contre les attaques XSS. L'assainissement des entrées utilisateur est particulièrement utile sur les sites qui autorisent le balisage HTML, en changeant l'entrée utilisateur inacceptable dans un format acceptable. Par exemple, vous pouvez nettoyer le caractère < dans l'entité HTML &#60;
 Autres exploits
 
 XSS est souvent négligé, mais peut avoir autant d'impact que d'autres vulnérabilités à fort impact. Le plus souvent, il s'agit d'enchaîner plusieurs vulnérabilités pour produire un exploit plus grand/meilleur. Vous trouverez ci-dessous d'autres outils et sites Web intéressants liés au XSS.
