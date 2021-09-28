@@ -75,8 +75,9 @@ Cependant, cela ne doit pas nécessairement être sur la machine cible et peut �
 
 **Se prémunir du Kerberoasting :**
 
-- :white_check_mark:Opter pour des mots de passe de service forts :muscle: - Si les mots de passe du compte de service sont forts, le kerberoasting sera inefficace
-- :no_entry_sign: N'autorisez pas de comptes de service comme administrateurs de domaine :no_entry_sign: : - Les comptes de service n'ont pas besoin d'être des administrateurs de domaine, kerberoasting ne sera pas aussi efficace si vous ne faites pas des comptes de service comme administrateurs de domaine.
+- :white_check_mark: Optez pour des mots de passe de service forts :muscle: - Si les mots de passe du compte de service sont forts, le kerberoasting sera inefficace
+- :no_entry_sign: N'autorisez pas de comptes de service comme administrateurs de domaine :no_entry_sign: :   
+  Les comptes de service n'ont pas besoin d'être des administrateurs de domaine, kerberoasting ne sera pas aussi efficace si vous ne faites pas des comptes de service comme administrateurs de domaine.
 
 **Répondre aux questions ci-dessous**
 
