@@ -39,7 +39,7 @@ Rubeus est déjà copilé sur la machine cible 🙌
 
 1.) ```cd Downloads```- accédez au répertoire dans lequel se trouve Rubeus
 
-2.) ```Rubeus.exe asreprooast``` - Cela exécutera la commande AS-REP roasté à la recherche d'utilisateurs vulnérables, puis dumpera les hachages d'utilisateurs vulnérables trouvés.
+2.) ```Rubeus.exe asreproast``` - Cela exécutera la commande AS-REP roasté à la recherche d'utilisateurs vulnérables, puis dumpera les hachages d'utilisateurs vulnérables trouvés.
 
 **Crack des hashes avec hashcat** -
 
