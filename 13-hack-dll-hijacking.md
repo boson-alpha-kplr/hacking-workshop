@@ -42,6 +42,7 @@ Empire 3 est un framework de post-exploitation qui inclut un agent Windows pur P
 
 3.) ```sudo ./setup/install.sh```
 
+! Lancer le serveur empire sur une fenêtre, et le client sur une autre.
 
 **Evil-WinRM**
 
@@ -128,6 +129,8 @@ Maintenant que nous avons établi un point d'ancrage sûr, nous voulons obtenir 
 <img src="https://windows-internals.com/wp-content/uploads/2020/05/spooler-queue.png"/>
 
 Vérifiez le numéro de version de Windows :  
+
+Dans Evil-WinRM : 
 
 1.) Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" -Name ReleaseId 
 
