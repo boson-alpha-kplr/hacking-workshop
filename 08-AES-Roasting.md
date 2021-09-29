@@ -1,6 +1,6 @@
 ### Roasting AES
 
-- Très similaire à Kerberoasting, AS-REP Roasting dump les hachages krbasrep5 des comptes d'utilisateurs pour lesquels la pré-authentification Kerberos est désactivée.   
+- Très similaire au Kerberoasting, AS-REP Roasting dump les hachages krbasrep5 des comptes d'utilisateurs pour lesquels la pré-authentification Kerberos est désactivée.   
 
 - Contrairement à Kerberoasting, ces utilisateurs n'ont pas besoin d'être des comptes de service, la seule exigence pour pouvoir griller AS-REP un utilisateur est que l'utilisateur doit avoir désactivé la pré-authentification.
 
