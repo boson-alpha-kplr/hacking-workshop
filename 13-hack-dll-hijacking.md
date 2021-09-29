@@ -107,6 +107,8 @@ Evil-WinRM donne accès à une invite PowerShell pour lancer des commandes. Cela
 
 La session lancée depuis Evil-WinRM a des limitations avec PowerShell. Vous devrez créer un nouveau processus avec Empire pour pouvoir continuer l'exercice. Tout d'abord, recherchez un nouveau processus vers lequel migrer à l'aide de Get-Process (alias ps). En règle générale, vous souhaiterez viser un processus commun qui soit stable et ne sera pas fermé par un utilisateur (par exemple, un explorateur).
 
+- Pour lier votre session Empire avec la session EvilWin-Rm utilisez la commande `interact`
+
 1.)  ps
 
 <img src="https://www.bc-security.org/wp-content/uploads/2019/05/ps_dllhijacking.jpg"/>
