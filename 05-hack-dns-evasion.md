@@ -164,7 +164,7 @@ Ces fichiers sont utilisés principalement dans l'analyse des caractéristiques 
 Réponse : $ tshark ...
 ```
 
-Le script ~/dns-exfil-infil/packetyGrabber.py permet de decrypter les fichiers Wireshark.
+Le script `~/dns-exfil-infil/packetyGrabber.py` permet de decrypter les fichiers Wireshark.
 ```console
 $ python3 ~/dns-exfil-infil/packetyGrabber.py
 ```
@@ -226,7 +226,7 @@ $ nslookup ...
 ```
 
 Le contenu représente du code python crypté.  
-Décrypter le contenu avec le script python ~/dns-exfil-infil/packetySimple.py :
+Décrypter le contenu avec le script python `~/dns-exfil-infil/packetySimple.py` :
 ```console
 $ python3 ~/dns-exfil-infil/packetySimple.py
 ```
