@@ -2,7 +2,7 @@
   
 ### Golden/Silver Ticket avec Mimikatz
   
-Cette fois nous allon utiliser mimikatz afin de créer dans un premier temps **un Silver ticket**.
+Cette fois nous allons utiliser mimikatz afin de créer dans un premier temps **un Silver ticket**.
 
 - Un Silver Ticket peut parfois être mieux utilisé dans les engagements de pentest plutôt qu'un Golden Ticket car il est un peu plus discret.  
 - Si la furtivité et le fait de ne pas être détecté sont importants, un Silver Ticket est probablement une meilleure option qu'un Golden Ticket, mais l'approche pour en créer un est exactement la même. 
