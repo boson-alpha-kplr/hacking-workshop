@@ -11,7 +11,7 @@ Cette fois nous allons utiliser mimikatz afin de créer dans un premier temps **
 **Exemple de Scénario**
 
 - Un scénario d'utilisation spécifique pour un Silver Ticket serait que vous souhaitiez accéder au serveur SQL du domaine, mais votre utilisateur compromis actuel n'a pas accès à ce serveur.   
-- Vous pouvez trouver un compte de service accessible pour prendre pied en kerberoasting ce service, vous pouvez ensuite dumper le hachage du service, puis emprunter l'identité de leur TGT afin de demander un ticket de service pour le service SQL du KDC vous permettant d'accéder au serveur SQL du domaine.
+- Vous pouvez trouver un compte de service accessible pour tenter le kerberoasting de ce service, vous pouvez ensuite dumper le hachage du service, puis emprunter l'identité de leur TGT afin de demander un ticket de service pour le service SQL du KDC vous permettant d'accéder au serveur SQL du domaine.
 
 **Présentation de KRBTGT**
 
