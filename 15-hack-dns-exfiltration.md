@@ -43,7 +43,7 @@ Vous aurez besoin de fichiers pour compléter le reste du TP.
 
 **Partie encodeur-transmetteur DNS**
 
-2. (packety.py)[https://raw.githubusercontent.com/kleosdc/dns-exfil-infil/main/packety.py]
+2. [packety.py](https://raw.githubusercontent.com/kleosdc/dns-exfil-infil/main/packety.py)
 
 Lorsque packety.py est exécuté, vous devrez fournir au script l'entrée suivante :
 
@@ -88,7 +88,7 @@ Lorsque packety.py est exécuté, vous devrez fournir au script l'entrée suivan
 
 **Partie decodeur-recepteur DNS**
 
-3. [packetyGrabber.py] (https://raw.githubusercontent.com/kleosdc/dns-exfil-infil/main/packetyGrabber.py)
+3. [packetyGrabber.py](https://raw.githubusercontent.com/kleosdc/dns-exfil-infil/main/packetyGrabber.py)
 
 Le code demandera à l'utilisateur la saisie suivante :
 
