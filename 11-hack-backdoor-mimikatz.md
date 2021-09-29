@@ -16,7 +16,10 @@ Ce workshop ne sera qu'une section de présentation et ne vous obligera pas à f
 comme expliqué ci-dessus, l'horodatage est chiffré avec le hachage NT des utilisateurs.  
 - Le contrôleur de domaine essaie ensuite de déchiffrer cet horodatage avec le hachage NT des utilisateurs, une fois qu'une clé squelette est implantée, le contrôleur de domaine essaie de déchiffrer l'horodatage en utilisant à la fois le hachage NT de l'utilisateur et le hachage NT de la clé squelette vous permettant d'accéder à la forêt du domaine.
 
+**Test préalable**
 
+Tester en montant un accès sur un disque avec NET USE sans mot de passe
+`controller\administrator@CONTROLLER-1 C:\Users\Administrator\Downloads>net use z: \\10.10.231.111\admin$ /USER:Administrator`
 
 **Préparation de Mimikatz** -
 
@@ -41,6 +44,10 @@ exemple : ```net use c:\\DOMAIN-CONTROLLER\admin$ /user:Administrator mimikatz``
 exemple : ```dir \\Desktop-1\c$ /user:Machine1 mimikatz``` - accéder au répertoire de Desktop-1 sans jamais savoir quels utilisateurs ont accès à Desktop-1
 
 La clé squelette ne persistera pas par elle-même car elle s'exécute dans la mémoire, elle peut être scriptée ou persistée à l'aide d'autres outils et techniques, mais cela est hors de portée pour ce worskshop.
+
+Tester en montant un accès sur un disque avec NET USE sans mot de passe
+`controller\administrator@CONTROLLER-1 C:\Users\Administrator\Downloads>net use z: \\10.10.231.111\admin$ /USER:Administrator`
+The command completed successfully
 
 **Répondez aux questions** 
 
