@@ -6,7 +6,7 @@
 
 - Contrairement aux attaques d'exfiltration sur le DNS, l'infiltration définit le processus par lequel le code malveillant est exécuté pour manipuler les serveurs DNS soit à l'aide de systèmes automatisés où les attaquants se connectent à distance à l'infrastructure réseau, soit manuellement.
 
-- L'infiltration DNS est principalement utilisée pour les efforts de suppression de fichiers ou de mise en scène de logiciels malveillants. 
+- L'infiltration DNS est principalement utilisée pour la delivery de fichiers/programmes ou de staging de logiciels malveillants. 
 
 - Avec des systèmes de détection des menaces basés sur le comportement, les signatures ou la réputation, il est possible que cette méthode d'attaque soit détectée.
 
