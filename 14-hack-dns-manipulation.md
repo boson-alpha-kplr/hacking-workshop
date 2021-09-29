@@ -16,7 +16,7 @@ Les serveurs DNS sont répartis dans le monde entier et sont constamment mis à 
   <img src="https://blog.nameshield.com/fr/wp-content/uploads/sites/3/2017/04/r%C3%A9solution-dns-2-5.jpg"/>
 </p>
 
-L'objet de ce TP sera d'explorer les techniques pour exfiltrer et infiltrer les données ainsi que le Tunneling de DNS Tunneling et comment il peut être utilisé pour bypasser différents protocoles comme HTTP via DNS.
+L'objet de ce TP sera d'explorer les techniques pour exfiltrer et infiltrer les données ainsi que le Tunneling de DNS et comment il peut être utilisé pour bypasser différents protocoles comme HTTP via DNS.
 
 <p align="center">
   <img src="https://cdn.discordapp.com/attachments/798799811482353734/798809211060355092/intro-2-1.png"/>
@@ -41,7 +41,7 @@ Iodine permet de tunneler les données IPv4 via un serveur DNS. Cela peut être 
 
 
 
-Installer iodine :
+**Installer iodine :**
 ```console
 $ sudo apt-get install iodine
 ```
@@ -50,7 +50,7 @@ $ sudo apt-get install iodine
 
 Wireshark est un analyseur de paquets libre et gratuit. 
 
-Installer Wireshark :
+**Installer Wireshark :**
 ```console
 $ sudo apt-get install tshark
 ```
@@ -60,6 +60,7 @@ $ sudo apt-get install tshark
 ### Lexique 
 
 **Qu’est-ce qu'un enregistrement AAAA ?**  
+
 Un record DNS AAAA (record d'adresse) traduit un nom de domaine vers une adresse IPv6, à l'instar du record DNS A qui pointe un nom de domaine vers une adresse IPv4.
 
 Vous pouvez par example créer un record AAAA pour le hostname "www" qui réfère vers l'adresse IPv6 2a00:1140:0200:0000::17, ainsi www.votredomaine.com pointera vers le serveur à l'adresse IPv6 2a00:1140:0200:0000::17.
