@@ -26,9 +26,20 @@ Ce workshop expliquera les différents types de scripts intersites, les attaques
 
 ---
 
+### Target : 
+
+Nous attaquerons cette application web de test
+Il faudra enregistrer un utilisateur test pour mener les attaques. 
+
+<img src="https://imgur.com/MTbA186.png">
+
+---
+
 # Stored XSS
 
 Les scripts intersites stockés sont le type de XSS le plus dangereux. C'est là qu'une chaîne malveillante provient de la base de données des sites Web. Cela se produit souvent lorsqu'un site Web autorise une entrée utilisateur qui n'est pas nettoyée (supprimer les "mauvaises parties" d'une entrée utilisateur) lorsqu'elle est insérée dans la base de données.
+
+<img src="https://imgur.com/LCSFUTB.png">
 
 **Un exemple :**
 
@@ -82,7 +93,10 @@ Dans une attaque de script inter-sites réfléchie, la charge utile malveillante
 
 Cela peut sembler inoffensif car cela nécessite que la victime envoie une demande contenant une charge utile d'attaquants, et un utilisateur ne s'attaquerait pas. Cependant, les attaquants pourraient amener l'utilisateur à cliquer sur son lien conçu qui contient sa charge utile via l'ingénierie sociale par e-mail.
 
-Le XSS réfléchi est le type d'attaque XSS le plus courant.
+Le XSS réfléxif est le type d'attaque XSS le plus courant.
+
+<img src="https://imgur.com/yX7zRh8.png">
+
 
 **Un exemple**
 
