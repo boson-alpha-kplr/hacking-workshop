@@ -4,12 +4,6 @@ Invoke-PrintDemon tire parti de deux vulnérabilités différentes : Faxhell et 
 
 Les vulnérabilités de détournement de DLL se produisent lorsqu'un programme tente de charger une DLL à partir d'un emplacement et ne peut pas la trouver. Comme indiqué ci-dessus, le service de télécopie ne trouve pas la DLL ualapi lorsqu'il essaie de la charger. Le service de télécopie s'exécute en tant que SYSTEM, donc tout code exécuté à partir de la DLL s'exécutera dans un contexte élevé. Cependant, nous devons écrire dans le dossier privilégié C:\Windows\System32 pour pirater la DLL.
 
-
-
-DLL manquante pour le service de télécopie
-
-
-
 CVE-2020-1048 nous permet d'écrire arbitrairement n'importe où sur le disque. Le post lié à la vulnérabilité est un peu obtus mais fonctionne grâce à trois concepts principaux.
 
 1.) Un port d'imprimante ne doit pas nécessairement être un port réel, mais peut être un emplacement de fichier. Réfléchissez à la façon dont vous pouvez imprimer des fichiers au format PDF. Cela passe toujours par un "port d'imprimante" mais écrit dans un fichier.
@@ -18,7 +12,7 @@ CVE-2020-1048 nous permet d'écrire arbitrairement n'importe où sur le disque. 
 
 3.) Lorsqu'un travail d'impression est lancé, il hérite du privilège de l'utilisateur qui demande le travail.
 
-Ainsi, au départ, lorsque nous demandons un travail d'impression, il ne dispose que de nos autorisations utilisateur standard. Cependant, le fichier de travail reflet n'est associé à aucun contexte utilisateur. Cela signifie que lorsque le service Spouleur d'impression est redémarré et lance un travail à partir du fichier fantôme et hérite des autorisations du service Spouleur d'impression, qui s'exécute en tant que SYSTEM !
+Ainsi, au départ, lorsque nous demandons un travail d'impression, il ne dispose que de nos autorisations utilisateur standard. Cependant, le fichier de travail reflet n'est associé à aucun contexte utilisateur. Cela signifie que lorsque le service Spooleur d'impression est redémarré et lance un travail à partir du fichier fantôme et hérite des autorisations du service Spooleur d'impression, qui s'exécute en tant que SYSTEM !
 
 C'est beaucoup de choses compliquées qui sont expliquées dans un court paragraphe, donc la clé à retenir est que CVE-2020-1048 nous permet de dire à Print Spooler d'écrire dans n'importe quel fichier arbitraire. Tant que nous pourrons redémarrer le service Spooler, nous aurons les autorisations nécessaires même en tant qu'utilisateur de bas niveau. Heureusement, les travaux d'impression survivent aux redémarrages et le redémarrage de l'ordinateur est autorisé par n'importe quel utilisateur.
 
@@ -30,6 +24,7 @@ C'est beaucoup de choses compliquées qui sont expliquées dans un court paragra
 **Empire** 
 
 Empire 3 est un framework de post-exploitation qui inclut un agent Windows pur PowerShell et une compatibilité avec les agents Python 3.x Linux/OS X. Il s'agit de la fusion des précédents projets PowerShell Empire et Python EmPyre. Le cadre offre des communications cryptologiquement sécurisées et une architecture flexible.
+
 **Installation**
 
 <img src="https://www.bc-security.org/wp-content/uploads/2020/09/empire3.4.jpg"/>
@@ -76,7 +71,7 @@ La gestion à distance de Windows (WinRM) peut être utilisée pour se connecter
 
 ## Empire Agent
 
-Pour créer un écouteur Empire, exécutez les commandes suivantes :
+Pour créer un Listener Empire, exécutez les commandes suivantes :
 
 1.) `uselistener http`
 
@@ -130,7 +125,8 @@ Maintenant que nous avons établi un point d'ancrage sûr, nous voulons obtenir 
 
 <img src="https://windows-internals.com/wp-content/uploads/2020/05/spooler-queue.png"/>
 
-Vérifiez le numéro de version de Windows :
+Vérifiez le numéro de version de Windows :  
+
 1.) Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" -Name ReleaseId 
 
 Si la version est inférieure à une version de Windows 10, essayez d'utiliser le module Invoke-Printdemon dans Empire.
@@ -146,7 +142,7 @@ réponse
 
 - Invoke-PrintDemon est un PoC d'implémentation de PowerShell Empire utilisant PrintDemon et Faxhell.  
 - Le module contient déjà la DLL Faxhell, qui exploite CVE-2020-1048 pour l'élévation des privilèges.  
-- La vulnérabilité permet à un utilisateur non privilégié d'obtenir des privilèges au niveau du système via le spouleur d'impression Windows.  
+- La vulnérabilité permet à un utilisateur non privilégié d'obtenir des privilèges au niveau du système via le spooleur d'impression Windows.  
 - Le module imprime une DLL nommée ualapi.dll, qui est chargée dans System32. Le module place ensuite un lanceur dans le registre, qui exécute le code en tant que SYSTEM au redémarrage.
 
 <img src="https://www.bc-security.org/wp-content/uploads/2019/05/printdemon.jpg"/>
@@ -168,7 +164,9 @@ Si Invoke-PrintDemon a réussi, vous recevrez les messages suivants.
 
 ## Network Persistence
 
-Comme mentionné dans l'intro, pour que notre travail d'impression ait les privilèges d'écrire sur System32, nous devons redémarrer le service Print Spooler. Il s'agit d'un processus protégé, la chose la plus simple à faire est donc de redémarrer la machine. Au redémarrage, notre DLL malveillante sera écrite dans System32. Notre script est ensuite écrit dans le registre et déclenchera le service Fax pour initier un agent de niveau SYSTEM pour rappeler notre serveur Empire.
+Comme mentionné au début, pour que notre travail d'impression ait les privilèges d'écrire sur System32, nous devons redémarrer le service Print Spooler.  
+Il s'agit d'un processus protégé, la chose la plus simple à faire est donc de redémarrer la machine. Au redémarrage, notre DLL malveillante sera écrite dans System32.   
+Notre script est ensuite écrit dans le registre et déclenchera le service Fax pour initier un agent de niveau SYSTEM pour rappeler notre serveur Empire.
 
 <img src="https://user-images.githubusercontent.com/20302208/82018233-b6a83280-9639-11ea-8db0-28a82a5eb5d7.gif"/>
 
