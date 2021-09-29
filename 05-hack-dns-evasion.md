@@ -146,15 +146,15 @@ Cette technique est principalement utilisée comme moyen de collecter des inform
 - Dans cet exemple de scénario, un attaquant essaie d'exfiltrer des données vers son système et a décidé que sa meilleure option serait d'utiliser des requêtes DNS. 
 - L'objectif de l'attaquant est d'exfiltrer des informations sensibles d'une machine sur le réseau de SecureCorp. Dans cette démo, je montrerai les étapes qu'un attaquant pourrait suivre pour exfiltrer ces données de la machine compromise.
 
-Le matériel  a été généré via un faux générateur de cartes de crédit. 
+les informations de carte de crédit ont été générés via un faux générateur de cartes de crédit. 
 Toutes les informations de carte de crédit sont fausses :)
 
 Les fichiers utilisés pour cette démo se trouvent dans le repo `dns-exfil-infil` sur GitHub. 
 Vous aurez besoin de fichiers pour compléter le reste du TP.
 
-[securecorp.txt](https://raw.githubusercontent.com/kleosdc/dns-exfil-infil/main/securecorp.txt)
-[packety.py](https://raw.githubusercontent.com/kleosdc/dns-exfil-infil/blob/main/packety.py)
-[packetGrabber.py](https://raw.githubusercontent.com/kleosdc/dns-exfil-infil/blob/main/packetyGrabber.py)
+[securecorp.txt](https://raw.githubusercontent.com/kleosdc/dns-exfil-infil/main/securecorp.txt)  
+[packety.py](https://raw.githubusercontent.com/kleosdc/dns-exfil-infil/main/packety.py)  
+[packetGrabber.py](https://raw.githubusercontent.com/kleosdc/dns-exfil-infil/main/packetyGrabber.py)  
 
 1. Fichier texte contenant de faux numéros de carte de crédit, noms, adresses.
 
