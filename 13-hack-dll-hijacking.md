@@ -156,7 +156,7 @@ Remarque : vous devrez utiliser le lanceur codé en Base64 pour exécuter Invoke
 
 <img src="https://www.bc-security.org/wp-content/uploads/2019/05/stager.jpg"/>
 
-1.) `usemodule privesc/printdemon`
+1.) ` usemodule powershell/privesc/printdemon`
 
 2.) `set LauncherCode <Base64 Encoded Launcher>`
 
