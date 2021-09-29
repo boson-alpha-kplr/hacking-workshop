@@ -132,7 +132,7 @@ Vérifiez le numéro de version de Windows :
 
 Dans Evil-WinRM : 
 
-1.) Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" -Name ReleaseId 
+1.) `Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" -Name ReleaseId` 
 
 Si la version est inférieure à une version de Windows 10, essayez d'utiliser le module Invoke-Printdemon dans Empire.
 
