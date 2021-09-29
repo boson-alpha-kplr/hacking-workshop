@@ -128,7 +128,7 @@ Avec le xss reflexif, une charge utile d'attaquant sera injectée directement su
 
 Avec le xss basé sur DOM, une charge utile d'attaquant ne sera exécutée que lorsque le code Javascript vulnérable est chargé ou interagi. Il passe par une fonction Javascript comme ceci :
 
-```var mot-clé = document.querySelector('#search')```
+```var keyword = document.querySelector('#search')```
 ```keyword.innerHTML = <script>...</script>```
 
 **Répondre aux questions ci-dessous**
