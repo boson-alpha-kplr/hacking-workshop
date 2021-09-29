@@ -39,6 +39,9 @@ Une attaque par Golden/Silver Ticket fonctionne en dumpant le ticket d'octroi de
 
 3.) ```lsadump::lsa /inject /name:krbtgt``` - Cela dumpera le hachage ainsi que l'identifiant de sécurité nécessaire pour créer un Golden Ticket. Pour créer un Silver Ticket, vous devez modifier le /name : pour vider le hachage d'un compte d'administrateur de domaine ou d'un compte de service tel que le compte SQLService.
 
+Note : on peut également spécifier un service dans cette commande après le switch name   
+Exemple : `/name:sqlservice`
+
 <img src="https://imgur.com/BSh4rXy.png"/>
 
 ## Créer un ticket golden/silver 
