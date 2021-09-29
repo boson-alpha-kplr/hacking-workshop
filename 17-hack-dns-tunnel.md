@@ -8,17 +8,20 @@
 
 - Le protocole DNS est rarement surveillé par les entreprises. Pour cette raison, les pirates peuvent contourner un grand nombre de protocoles « indésirables » en utilisant le tunneling DNS.
 
+-- 
+
 ### Tunneling : Exemple
 
-Pour cet Exemple, nous allons explorer comment un pirate peut contourner divers sites Web restreints en utilisant HTTP sur DNS. Pour y parvenir, j'utiliserai « iodine ». Vous pouvez en savoir plus sur 'Iodine' ici : [Iodin](https://code.kryo.se/iodine/).
+Pour cet Exemple, nous allons explorer comment un pirate peut contourner divers sites Web restreints en utilisant HTTP sur DNS. Pour y parvenir, nous utiliserons a nouveau iodine. 
 
 <img src="https://cdn.discordapp.com/attachments/798799811482353734/808200889432145950/tunnel.png"/>
 
-La configuration est la suivante :
+**La configuration :**
 
-Une machine Linux hébergée par AWS qui sera le serveur de tunnel DNS.
-Ubuntu VM s'exécutant sur un ordinateur local qui sera le client du tunnel DNS.
-Nom de domaine public hébergé sur Google Domains (badbadtunnel.in)
+- Une machine Linux hébergée par AWS qui sera le serveur de tunnel DNS.  
+- une VM Ubuntu s'exécutant sur un ordinateur local qui sera le client du tunnel DNS.  
+- un Nom de domaine public hébergé sur Google Domains (badbadtunnel.in)
+- 
 Voici à quoi ressemble la configuration DNS :
 
 <img src="https://cdn.discordapp.com/attachments/807129623846584321/808025216428539954/0.PNG"/>
@@ -44,7 +47,7 @@ Sur le serveur AWS, nous commençons le iodined avec les arguments suivants :
 `Nom de sous-domaine - tunnel.badbadtunnel.in
 `
 
-Maintenant, sur notre machine cliente, exécutez iode avec les arguments suivants :
+Maintenant, sur notre machine cliente, exécutez iodine avec les arguments suivants :
 
 <img src="https://cdn.discordapp.com/attachments/807129623846584321/808026984356773928/5.PNG"/>
 
