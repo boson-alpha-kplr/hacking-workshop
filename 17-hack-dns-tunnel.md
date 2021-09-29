@@ -21,13 +21,13 @@ Pour cet Exemple, nous allons explorer comment un pirate peut contourner divers 
 - Une machine Linux hébergée par AWS qui sera le serveur de tunnel DNS.  
 - une VM Ubuntu s'exécutant sur un ordinateur local qui sera le client du tunnel DNS.  
 - un Nom de domaine public hébergé sur Google Domains (badbadtunnel.in)
-- 
+
 Voici à quoi ressemble la configuration DNS :
 
 <img src="https://cdn.discordapp.com/attachments/807129623846584321/808025216428539954/0.PNG"/>
 
 - Pour commencer, les deux machines doivent avoir iodine installé.  
-- Si vous utilisez une distribution basée sur Debian telle que Kali, ce sera dans leurs référentiels apt.
+- Si vous utilisez une distribution basée sur Debian telle que Kali, ce sera via leurs référentiels apt.
 
 `sudo apt installer iodine
 `
@@ -80,7 +80,7 @@ Voici le contenu de id_rsa.pub
 
 <img src="https://cdn.discordapp.com/attachments/807129623846584321/808029032129888276/6.PNG"/>
 
-- On y est presqee, il nous suffit maintenant d'ouvrir notre navigateur (Firefox dans ce cas) et de modifier les paramètres du proxy. 
+- On y est presque, il nous suffit maintenant d'ouvrir notre navigateur (Firefox dans ce cas) et de modifier les paramètres du proxy. 
 - Il existe également des extensions de navigateur telles que FoxyProxy ou Proxy SwitchyOmega.
 
 - Pour les options de proxy, nous devons sélectionner « Configuration manuelle du proxy ».
@@ -91,7 +91,8 @@ Voici le contenu de id_rsa.pub
 
 Et voilà, c'est Terminé!
 
-Nous utilisons maintenant HTTP sur DNS... 
+Nous utilisons maintenant HTTP en passant par le DNS.
 Si nous allons sur myip.is, nous devrions voir l'adresse IP publique de notre serveur de tunnel DNS.
+Mission Accomplie.
 
 <img src="https://cdn.discordapp.com/attachments/807129623846584321/808030929665785866/8.PNG"/>
