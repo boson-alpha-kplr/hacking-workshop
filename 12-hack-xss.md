@@ -18,7 +18,7 @@ L'étendue de la gravité de cette vulnérabilité dépend du type de XSS, qui e
 
 - **Autres exploits basés sur le navigateur** - Il existe des millions de possibilités avec XSS.
 
-Qui saurait que tout cela était possible en visitant simplement une page Web. 
+Qui saurait que tout cela était possible en visitant simplement une page Web.   
 Certaines mesures sont mises en place pour empêcher que cela ne se produise, par votre navigateur et votre antivirus.
 
 
