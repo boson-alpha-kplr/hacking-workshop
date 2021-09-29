@@ -185,19 +185,17 @@ Lorsque packety.py est exécuté, vous devrez fournir au script l'entrée suivan
 `Start transmitting... [PRESS ENTER KEY]
 `
 
-Le code commence par la lecture du fichier texte. 
-Le contenu du fichier texte sera d'abord encodé en Base64 puis en Base58. Cela nous laisse avec une longue chaîne encodée. La chaîne est ensuite divisée en sections de 20 caractères où chaque section aura 3 caractères 'factices' ajoutés pour plus d'obscurcissement. 
-Un caractère sera ajouté au début de la chaîne encodée et deux caractères seront ajoutés.
+- Le code commence par la lecture du fichier texte.   
+- Le contenu du fichier texte sera d'abord encodé en Base64 puis en Base58. Cela nous laisse avec une longue chaîne encodée.  
+- La chaîne est ensuite divisée en sections de 20 caractères où chaque section aura 3 caractères 'factices' ajoutés pour plus d'obscurcissement.   
+- Un caractère sera ajouté au début de la chaîne encodée et deux caractères seront ajoutés.
 
-Par exemple, une section des données encodées pourrait ressembler à ceci : « 6gfghhjywsas3rg4hda3 ». Une fois les caractères supplémentaires ajoutés, il deviendra "x6gfghhjywsas3rg4hda3yu".
+- Par exemple, une section des données encodées pourrait ressembler à ceci : « 6gfghhjywsas3rg4hda3 ». Une fois les caractères supplémentaires ajoutés, il deviendra "x6gfghhjywsas3rg4hda3yu".
 
-Une fois que tout est encodé et prêt, le code attendra que l'utilisateur appuie sur "ENTREE" afin de commencer à transmettre les requêtes au serveur DNS.
-Le serveur DNS aurait déjà été configuré pour capturer les requêtes entrantes avec 'Wireshark' ou 'tshark'.
+- Une fois que tout est encodé et prêt, le code attendra que l'utilisateur appuie sur "ENTREE" afin de commencer à transmettre les requêtes au serveur DNS.  
+- Le serveur DNS aurait déjà été configuré pour capturer les requêtes entrantes avec 'Wireshark' ou 'tshark'.
 
-
-
-Ensuite, il ne reste plus qu'à attendre que la transmission atteigne 100%. Si l'une des requêtes n'est pas livrée à temps et dans le bon ordre, les données exfiltrées seront incomplètes et inutiles pour l'attaquant.
-
+- Ensuite, il ne reste plus qu'à attendre que la transmission atteigne 100%. Si l'une des requêtes n'est pas livrée à temps et dans le bon ordre, les données exfiltrées seront incomplètes et inutiles pour l'attaquant.
 
 3. `packetyGrabber.py` ( https://github.com/kleosdc/dns-exfil-infil )
 
@@ -209,27 +207,25 @@ Le code demandera à l'utilisateur la saisie suivante :
 
 * Nom de domaine : Ce sera votre nom de domaine.
 
-
-
-python3 ~/tools/packety/packetyGrabber.py
-
-File captured: cap-credit-cards.pcap
-
-Filename output: credit-cards.txt
-
-Domain Name (Example: badbaddoma.in): badbaddoma.in
-
-[+] Domain Name set to badbaddoma.in
-
-[+] Filtering for your domain name.
-
-[+] Base 58 decoded.
-
-[+] Base 64 decoded.
-
-[+] Output to credit-cards.txt
-
-Si tout se passe bien, qu'aucune requête n'a été perdue et que toutes les entrées sont correctes, un fichier avec les données décodées sera enregistré dans le même répertoire à partir duquel vous avez exécuté le code.
+`python3 ~/tools/packety/packetyGrabber.py
+`
+`File captured: cap-credit-cards.pcap
+`
+`Filename output: credit-cards.txt
+`
+`Domain Name (Example: badbaddoma.in): badbaddoma.in
+`
+`[+] Domain Name set to badbaddoma.in
+`
+`[+] Filtering for your domain name.
+`
+`[+] Base 58 decoded.
+`
+`[+] Base 64 decoded.
+`
+`[+] Output to credit-cards.txt
+`
+- Si tout se passe bien, qu'aucune requête n'a été perdue et que toutes les entrées sont correctes, un fichier avec les données décodées sera enregistré dans le même répertoire à partir duquel vous avez exécuté le code.
 
 ### Exfiltration DNS : Pratique
 
@@ -324,3 +320,66 @@ Le but étant souvent de supprimer des fichiers ou d'exécuter du code sur les m
 
 ### Tunneling 
 
+Dans les deux tâches précédentes, nous avons vu comment les requêtes et les réponses DNS pouvaient être utilisées pour infiltrer et exécuter des charges utiles. Les entreprises auront généralement mis en place des pare-feu, des IDS (Intrusion Detection Systems) et/ou des IPS (Intrusion Protection Systems) afin de prévenir/alerter lorsque des protocoles entrants et sortants indésirables transitent par leur réseau. Le protocole DNS est rarement surveillé par les entreprises. Pour cette raison, les pirates peuvent contourner un grand nombre de protocoles « indésirables » en utilisant le tunneling DNS.
+
+Démo
+Pour cette démo, nous allons explorer comment un pirate peut contourner divers sites Web restreints en utilisant HTTP sur DNS. Pour y parvenir, j'utiliserai « iodine ». Vous pouvez en savoir plus sur 'Iodine' ici : [Iodin](https://code.kryo.se/iodine/).
+
+La configuration est la suivante :
+
+Une machine Linux hébergée par AWS qui sera le serveur de tunnel DNS.
+Ubuntu VM s'exécutant sur un ordinateur local qui sera le client du tunnel DNS.
+Nom de domaine public hébergé sur Google Domains (badbadtunnel.in)
+Voici à quoi ressemble la configuration DNS :
+
+- Pour commencer, les deux machines doivent avoir iodine installé.  
+- Si vous utilisez une distribution basée sur Debian telle que Kali, ce sera dans leurs référentiels apt.
+
+`sudo apt installer iodine
+`
+`iodine - Client
+`
+`iodined - Server
+`
+
+Sur le serveur AWS, nous commençons le iodined avec les arguments suivants :
+
+
+`Port - 27001
+`
+`IP du serveur de tunnel DNS - 10.0.0.1
+`
+`Nom de sous-domaine - tunnel.badbadtunnel.in
+`
+
+Maintenant, sur notre machine cliente, exécutez iode avec les arguments suivants :
+
+`IP du serveur de tunnel DNS
+`
+`Nom de sous-domaine`
+
+- Si tout est configuré correctement, nous devrions maintenant avoir une connexion avec notre serveur de tunnel DNS. Nous pouvons essayer de pinger 10.0.0.1 (DNS Tunnel Server) pour voir si nous sommes connectés.
+
+Success!
+
+- Maintenant, nous avons fait à peu près la moitié du chemin. Notre HTTP sur DNS n'est pas encore complètement configuré.
+
+- Tout d'abord, nous devons générer une clé SSH et télécharger le contenu de id_rsa.pub sur notre serveur DNS Tunnel dans le fichier allowed_keys. Voici les étapes.
+
+C'est le contenu de id_rsa.pub
+
+- Ici, vous pouvez voir qu'on a ajouté le contenu id_rsa.pub aux clés_autorisées sur mon serveur DNS. Cela me permettra de SSH dans mon serveur.
+
+- Nous pouvons maintenant nous connecter en SSH à notre serveur de tunnel DNS avec l'option -D 8080
+
+- On y est presqee, il nous suffit maintenant d'ouvrir notre navigateur (Firefox dans ce cas) et de modifier les paramètres du proxy. 
+- Il existe également des extensions de navigateur telles que FoxyProxy ou Proxy SwitchyOmega.
+
+- Pour les options de proxy, nous devons sélectionner « Configuration manuelle du proxy ».
+
+- Définissez l'hôte SOCKS avec l'adresse IP '127.0.0.1' et pour le numéro de port sur '8080'.
+
+
+Terminé!
+
+Nous utilisons maintenant HTTP sur DNS... Si nous allons sur myip.is, nous devrions voir l'adresse IP publique de notre serveur de tunnel DNS.
