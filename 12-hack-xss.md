@@ -89,9 +89,9 @@ reponse
   
 # Reflected XSS
 
-Dans une attaque de script inter-sites réfléchie, la charge utile malveillante fait partie de la demande des victimes au site Web. Le site Web inclut cette charge utile en réponse à l'utilisateur. En résumé, un attaquant doit inciter une victime à cliquer sur une URL pour exécuter sa charge utile malveillante.
+Dans une attaque de script inter-sites réfléchie, le payload malveillante fait partie de la demande des victimes au site Web. Le site Web inclut cette payload en réponse à l'utilisateur. En résumé, un attaquant doit inciter une victime à cliquer sur une URL pour exécuter sa payload malveillante.
 
-Cela peut sembler inoffensif car cela nécessite que la victime envoie une demande contenant une charge utile d'attaquants, et un utilisateur ne s'attaquerait pas. Cependant, les attaquants pourraient amener l'utilisateur à cliquer sur son lien conçu qui contient sa charge utile via l'ingénierie sociale par e-mail.
+Cela peut sembler inoffensif car cela nécessite que la victime envoie une demande contenant une payload d'attaquants, et un utilisateur ne s'attaquerait pas. Cependant, les attaquants pourraient amener l'utilisateur à cliquer sur son lien conçu qui contient sa payload via l'ingénierie sociale par e-mail.
 
 Le XSS réfléxif est le type d'attaque XSS le plus courant.
 
@@ -100,16 +100,16 @@ Le XSS réfléxif est le type d'attaque XSS le plus courant.
 
 **Un exemple**
 
-Un attaquant crée une URL contenant une charge utile malveillante et l'envoie à la victime. La victime est trompée par l'attaquant en cliquant sur l'URL. La requête peut être http://example.com/search?keyword=<script>...</script>
+Un attaquant crée une URL contenant une payload malveillante et l'envoie à la victime. La victime est trompée par l'attaquant en cliquant sur l'URL. La requête peut être http://example.com/search?keyword=<script>...</script>
 
-Le site Web inclut ensuite cette charge utile malveillante de la demande dans la réponse à l'utilisateur. Le navigateur des victimes exécutera la charge utile dans la réponse. Les données recueillies par le script sont ensuite renvoyées à l'attaquant (elles ne sont pas nécessairement envoyées par la victime, mais vers un autre site Web où l'attaquant recueille ensuite ces données - cela empêche l'attaquant de recevoir directement les données de la victime).
+Le site Web inclut ensuite cette payload malveillante de la demande dans la réponse à l'utilisateur. Le navigateur des victimes exécutera la payload dans la réponse. Les données recueillies par le script sont ensuite renvoyées à l'attaquant (elles ne sont pas nécessairement envoyées par la victime, mais vers un autre site Web où l'attaquant recueille ensuite ces données - cela empêche l'attaquant de recevoir directement les données de la victime).
 
 Répondre aux questions ci-dessous
 Créez un payload XSS réfléchie qui provoquera une fenêtre contextuelle disant "Hello"
 ```
 reponse
 ```
-Créez une charge utile XSS réfléchie qui provoquera une fenêtre contextuelle avec l'adresse IP de votre machine
+Créez une payload XSS réfléchie qui provoquera une fenêtre contextuelle avec l'adresse IP de votre machine
 ```
 reponse
 ```
@@ -118,15 +118,15 @@ reponse
 # DOM Based Attacks
 
 **Qu'est-ce que le DOM**
-Dans une attaque XSS basée sur DOM, une charge utile malveillante n'est pas réellement analysée par le navigateur de la victime jusqu'à ce que le JavaScript légitime du site Web soit exécuté. Qu'est-ce que cela signifie?
+Dans une attaque XSS basée sur DOM, une payload malveillante n'est pas réellement analysée par le navigateur de la victime jusqu'à ce que le JavaScript légitime du site Web soit exécuté. Qu'est-ce que cela signifie?
 
-Avec le xss reflexif, une charge utile d'attaquant sera injectée directement sur le site Web et n'aura pas d'importance lorsque d'autres Javascript sur le site seront chargés.
+Avec le xss reflexif, une payload d'attaquant sera injectée directement sur le site Web et n'aura pas d'importance lorsque d'autres Javascript sur le site seront chargés.
 
 <html>
      Vous avez recherché <em><script>...</script></em>
 </html
 
-Avec le xss basé sur DOM, une charge utile d'attaquant ne sera exécutée que lorsque le code Javascript vulnérable est chargé ou interagi. Il passe par une fonction Javascript comme ceci :
+Avec le xss basé sur DOM, une payload d'attaquant ne sera exécutée que lorsque le code Javascript vulnérable est chargé ou interagi. Il passe par une fonction Javascript comme ceci :
 
 ```var keyword = document.querySelector('#search')```
 ```keyword.innerHTML = <script>...</script>```
