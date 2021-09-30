@@ -180,11 +180,11 @@ Accédez à "Filter Evasion" dans XSS Playground pour commencer.
 
 Les scripts intersites sont extrêmement courants. Vous trouverez ci-dessous quelques rapports de XSS trouvés dans des applications massives ; vous pouvez être très bien payé pour trouver et signaler ces vulnérabilités.
 
-XSS trouvé dans Shopify
-7 500 $ pour XSS trouvé dans le chat Steam
-2 500 $ pour XSS dans HackerOne
-XSS trouvé sur Instagram
-Répondre aux questions ci-dessous
+XSS trouvé dans Shopify. 
+7 500 $ pour XSS trouvé dans le chat Steam  
+2 500 $ pour XSS dans HackerOne. 
+XSS trouvé sur Instagram  
+Répondre aux questions ci-dessous  
 
 Ignorez le filtre qui supprime toutes les balises de script.
 
