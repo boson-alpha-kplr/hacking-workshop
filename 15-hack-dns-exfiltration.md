@@ -100,24 +100,24 @@ Le code demandera à l'utilisateur la saisie suivante :
 
 <img src="https://cdn.discordapp.com/attachments/807129623846584321/807129744641622016/7.PNG"/>
 
-`python3 ~/tools/packety/packetyGrabber.py      
-`
-`File captured: cap-credit-cards.pcap      
-`
-`Filename output: credit-cards.txt    
-`
-`Domain Name (Example: badbaddoma.in): badbaddoma.in.   
-`
-`[+] Domain Name set to badbaddoma.in.   
-`
-`[+] Filtering for your domain name.    
-`
-`[+] Base 58 decoded.    
-`
-`[+] Base 64 decoded.    
-`
-`[+] Output to credit-cards.txt.   
-`
+`python3 ~/tools/packety/packetyGrabber.py`      
+
+`File captured: cap-credit-cards.pcap`      
+
+`Filename output: credit-cards.txt`    
+
+`Domain Name (Example: badbaddoma.in): badbaddoma.in`   
+
+`[+] Domain Name set to badbaddoma.in`   
+
+`[+] Filtering for your domain name`    
+
+`[+] Base 58 decoded.`    
+
+`[+] Base 64 decoded.`    
+
+`[+] Output to credit-cards.txt.`   
+
 - Si tout se passe bien, qu'aucune requête n'a été perdue et que toutes les entrées sont correctes, un fichier avec les données décodées sera enregistré dans le même répertoire à partir duquel vous avez exécuté le code.  
 
 <img src="https://cdn.discordapp.com/attachments/807129623846584321/807129748282933258/8.PNG"/>
