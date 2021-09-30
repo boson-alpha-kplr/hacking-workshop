@@ -61,6 +61,11 @@ Default output format [None]:
 
 `export AWS_DEFAULT_PROFILE=cloudgoat`
 
+
+
+---
+
+
 ### Fun Fact :)
 
 <img src="https://github.com/mehdi-lamrani/hacking-workshop/blob/main/img/IMG_0490.jpg?raw=true"/>
