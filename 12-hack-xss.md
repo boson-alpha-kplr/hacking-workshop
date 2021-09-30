@@ -174,7 +174,7 @@ Comprendre le script de base de la preuve de concept.
 
 # Contournement de filtres (Evasion)
 
-  Il existe de nombreuses techniques utilisées pour filtrer les charges utiles malveillantes utilisées avec les scripts intersites. Ce sera votre travail de contourner 4 filtres couramment utilisés.
+  Il existe de nombreuses techniques utilisées pour filtrer les payload malveillantes utilisées avec les scripts intersites. Ce sera votre travail de contourner 4 filtres couramment utilisés.
 
 Accédez à "Filter Evasion" dans XSS Playground pour commencer.
 
