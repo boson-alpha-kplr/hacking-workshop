@@ -4,9 +4,9 @@
 
 ### INSTALL TERRAFORM CLI
 
-`wget https://releases.hashicorp.com/terraform/1.0.8/terraform_1.0.8_linux_amd64.zip 
-unzip terraform_1.0.8_linux_amd64.zip  
-sudo mv terraform /usr/local/bin`
+`wget https://releases.hashicorp.com/terraform/1.0.8/terraform_1.0.8_linux_amd64.zip` 
+`unzip terraform_1.0.8_linux_amd64.zip ` 
+`sudo mv terraform /usr/local/bin`
 
 `terraform -version`
 
@@ -14,19 +14,19 @@ sudo mv terraform /usr/local/bin`
 
 `sudo apt-get -y remove --auto-remove awscli`
 
-`curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install`
+`curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"`
+`unzip awscliv2.zip`
+`sudo ./aws/install`
 
-aws --version
+`aws --version`
 
 ### INSTALL CLOUDGOAT
 
-git clone https://github.com/RhinoSecurityLabs/cloudgoat.git
-sudo apt install -y python3-pip
+`git clone https://github.com/RhinoSecurityLabs/cloudgoat.git`
+`sudo apt install -y python3-pip`
 
-cd cloudgoat
-pip install -r ./core/python/requirements.tx
+`cd cloudgoat`
+`pip install -r ./core/python/requirements.txt`
 chmod u+x cloudgoat.py
 
 ./cloudgoat.py config profile
