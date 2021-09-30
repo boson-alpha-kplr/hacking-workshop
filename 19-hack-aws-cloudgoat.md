@@ -29,9 +29,9 @@
 
 `cd cloudgoat`
 `pip install -r ./core/python/requirements.txt`
-chmod u+x cloudgoat.py
+`chmod u+x cloudgoat.py`
 
-./cloudgoat.py config profile
+`./cloudgoat.py config profile`
 
 ```
 No configuration file was found at /home/kali/cloudgoat/config.yml
