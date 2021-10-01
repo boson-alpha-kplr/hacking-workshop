@@ -7,6 +7,7 @@
 `10 Heures`
 
 3 : Elevation de privilège
+
 `C:\ESET Security\ekm.exe C:\Program Files\ESET\ESET Security\ekm.exe` (?)
 
 4 : Protocoles Faillibes
@@ -22,6 +23,7 @@
 `44D3 / 444 / 80`
 
 7 : Protocole Responder
+
 `SMB / HTTP`
 
 `Responder an LLMNR, NBT-NS and MDNS poisoner. It answers to  NBT-NS (NetBIOS Name Service) queries
