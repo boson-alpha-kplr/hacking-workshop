@@ -1,4 +1,5 @@
 1 : Ports LLMNR & NBT-NS
+
 `137 / 5355`
 
 2 : Kerberos Ticket LifeTime
@@ -9,29 +10,35 @@
 `C:\ESET Security\ekm.exe C:\Program Files\ESET\ESET Security\ekm.exe` (?)
 
 4 : Protocoles Faillibes
+
 `SMBv1 / NTLMv1 / WPAD`
 
 5 : SSP Web 
+
 `WDigest` (?)
 
-6 : Quels ports serait-il préférable d’utiliser dans le cas de la mise en place d’une connexion de type reverse, passant au travers un pare-feu d’entreprise ? (3 réponses obligatoires). 
+6 : Quels ports serait-il préférable d’utiliser dans le cas de la mise en place d’une connexion de type reverse, passant au travers un pare-feu d’entreprise ?
+ 
 `44D3 / 444 / 80`
 
 7 : Protocole Responder
-SMB / HTTP
+`SMB / HTTP`
 
 `Responder an LLMNR, NBT-NS and MDNS poisoner. It answers to  NBT-NS (NetBIOS Name Service) queries
 `
-8 : Quels sont les protocoles utilisés dans le cas d’une authentification au sein d’un domaine Microsoft Windows ?  
+8 : Quels sont les protocoles utilisés dans le cas d’une authentification au sein d’un domaine Microsoft Windows ?
+
 `NTLM / Kerberos`
 
 9 : Quels sont les prérequis pour le bon fonctionnement d’un proxy "socks4a" ?  
+
 `module Mestasploit /  /etc/prxichains.conf`
 
 https://www.offensive-security.com/metasploit-unleashed/proxytunnels/
 
 
 10 : Quelles mesures de sécurité faudrait-il appliquer pour empêcher une attaque de type "Man In The Middle" sur le protocole RDP ? 
+
 `Certificat / NLA`
 
 11 : Quel compte permet de générer des TGT valides ?  
