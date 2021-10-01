@@ -1,52 +1,74 @@
-1 : 
+1 : Ports LLMNR & NBT-NS
+`137 / 5355`
 
-2 : 
+2 : Kerberos Ticket LifeTime
+`10 Heures`
 
-3 : 
+3 : Elevation de privilège
+`C:\ESET Security\ekm.exe C:\Program Files\ESET\ESET Security\ekm.exe` (?)
 
-4 :
+4 : Protocoles Faillibes
+`SMBv1 / NTLMv1 / WPAD`
 
-5 : 
+5 : SSP Web 
+`WDigest` (?)
 
 6 : Quels ports serait-il préférable d’utiliser dans le cas de la mise en place d’une connexion de type reverse, passant au travers un pare-feu d’entreprise ? (3 réponses obligatoires). 
+`44D3 / 444 / 80`
 
-7 : 
+7 : Protocole Responder
+SMB / HTTP
 
-8 : Quels sont les protocoles utilisés dans le cas d’une authentification au sein d’un domaine Microsoft Windows ? (2 réponses obligatoires)  
+`Responder an LLMNR, NBT-NS and MDNS poisoner. It answers to  NBT-NS (NetBIOS Name Service) queries
+`
+8 : Quels sont les protocoles utilisés dans le cas d’une authentification au sein d’un domaine Microsoft Windows ?  
+`NTLM / Kerberos`
 
-9 : Quels sont les prérequis pour le bon fonctionnement d’un proxy "socks4a" ? (2 réponses obligatoires). 
+9 : Quels sont les prérequis pour le bon fonctionnement d’un proxy "socks4a" ?  
+`module Mestasploit /  /etc/prxichains.conf`
 
-10 : Quelles mesures de sécurité faudrait-il appliquer pour empêcher une attaque de type "Man In The Middle" sur le protocole RDP ? (2 réponses obligatoires)  
+https://www.offensive-security.com/metasploit-unleashed/proxytunnels/
+
+
+10 : Quelles mesures de sécurité faudrait-il appliquer pour empêcher une attaque de type "Man In The Middle" sur le protocole RDP ? 
+`Certificat / NLA`
 
 11 : Quel compte permet de générer des TGT valides ?  
+`Krbtgt`
 
 12 : Quelle est la suite logique de ces protocoles de résolution de noms ?  
+`DNS/LLMNR/NBNS`
 
 By default, Windows systems use the following prioritized list of services to attempt to resolve name resolution request:  
 `Domain Name Service (DNS)`
 `Link-Local Multicast Name Resolution (LLMNR)`
 `NetBIOS Name Service (NBNS/WINS)`
 
-13 : Quels sont les prérequis pour forger un Golden Ticket ? (2 réponses obligatoires)  
+13 : Quels sont les prérequis pour forger un Golden Ticket ?  
+`SID Domain / Hash NTLM krbtgt`
 
-
-14 : Dans le cas d’une authentification Kerberos au sein d’un domaine Microsoft Windows, à l’issue des différentes phases de communications avec l’AS (Authentication Service), quels sont les 2 éléments qui sont envoyés au client ? (2 réponses obligatoires) 
+14 : Dans le cas d’une authentification Kerberos au sein d’un domaine Microsoft Windows, à l’issue des différentes phases de communications avec l’AS (Authentication Service), quels sont les 2 éléments qui sont envoyés au client ? 
+`TGT / TGT Session Key`
 
 15 : Quel système de protection permet de limiter au maximum la modification des ACLs des groupes "Admins du domaine" et "Administrateurs du schéma" ?  
+`AdminSDHolder`
 
 16 : Quel outil permet la synchronisation avec les éléments d’un contrôleur de domaine Active Directory ?  
+``DCSync``
 
-17 : 
+17 : Algo Hash LM ?
+`DES`
 
 18 : Quel privilège permet de réaliser un dump de processus ?  
+`SeDebugPrivilege`
 
 19 : Que signifie l’acronyme "SSP" ?  
-Security Service Provider
-
+`Security Service Provider
+`
 20 : Dans un fichier Excel, quelles techniques permettent l'exécution de code à l’ouverture de celui-ci ? (2 réponses obligatoires)  
 `DDE / MACRO`
 
-21 : Quelles techniques sont utilisées pour réaliser des mouvements latéraux ? (3 réponses obligatoires)  
+21 : Quelles techniques sont utilisées pour réaliser des mouvements latéraux ? 
 `PTH / PTT / Golden Ticket`
 
 22 : Quelle commande faut-il utiliser pour créer une charge malveillante pour Metasploit ?  
@@ -80,7 +102,7 @@ https://cipher.com/blog/phishing-protection-spf-dkim-dmarc/
 30 : Quel élément n’est pas un SSP ?  
 `LiveSSP`
 
-31 : Quels outils peuvent permettre à un administrateur local sur un serveur, de prendre le contrôle d’une session utilisateur logué sur ce même serveur, sans devoir saisir son mot de passe ? (2 réponses obligatoires)  
+31 : Quels outils peuvent permettre à un administrateur local sur un serveur, de prendre le contrôle d’une session utilisateur logué sur ce même serveur, sans devoir saisir son mot de passe ?   
 `MMC / PsExec`
 
 32 :  deskNTLMV2 Attaccks
@@ -103,7 +125,7 @@ https://cipher.com/blog/phishing-protection-spf-dkim-dmarc/
 38 : Quel compte est utilisé pour générer des tickets Kerberos ?  
 `Krbtgt`
 
-39 : Avec quels types de hashs est-il possible de réaliser un PTH ? (2 réponses obligatoires)  
+39 : Avec quels types de hashs est-il possible de réaliser un PTH ?   
 `NTLM / NTLMv2
 `
 40 : Comment appelle-t-on une charge malveillante Meterpreter dont les DLL sont toutes intégrées à celle-ci ?  
