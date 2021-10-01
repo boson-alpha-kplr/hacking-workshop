@@ -1,4 +1,16 @@
+1 : 
+
+2 : 
+
+3 : 
+
+4 :
+
+5 : 
+
 6 : Quels ports serait-il préférable d’utiliser dans le cas de la mise en place d’une connexion de type reverse, passant au travers un pare-feu d’entreprise ? (3 réponses obligatoires). 
+
+7 : 
 
 8 : Quels sont les protocoles utilisés dans le cas d’une authentification au sein d’un domaine Microsoft Windows ? (2 réponses obligatoires)  
 
@@ -23,6 +35,8 @@ By default, Windows systems use the following prioritized list of services to at
 15 : Quel système de protection permet de limiter au maximum la modification des ACLs des groupes "Admins du domaine" et "Administrateurs du schéma" ?  
 
 16 : Quel outil permet la synchronisation avec les éléments d’un contrôleur de domaine Active Directory ?  
+
+17 : 
 
 18 : Quel privilège permet de réaliser un dump de processus ?  
 
