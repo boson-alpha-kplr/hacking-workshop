@@ -30,10 +30,13 @@
 ### INSTALL CLOUDGOAT
 
 `git clone https://github.com/RhinoSecurityLabs/cloudgoat.git`
+
 `sudo apt install -y python3-pip`
 
 `cd cloudgoat`
+
 `pip install -r ./core/python/requirements.txt`
+
 `chmod u+x cloudgoat.py`
 
 `./cloudgoat.py config profile`
