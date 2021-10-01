@@ -45,6 +45,7 @@ https://www.offensive-security.com/metasploit-unleashed/proxytunnels/
 `Krbtgt`
 
 12 : Quelle est la suite logique de ces protocoles de résolution de noms ?  
+
 `DNS/LLMNR/NBNS`
 
 By default, Windows systems use the following prioritized list of services to attempt to resolve name resolution request:  
