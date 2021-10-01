@@ -27,6 +27,7 @@ By default, Windows systems use the following prioritized list of services to at
 18 : Quel privilège permet de réaliser un dump de processus ?  
 
 19 : Que signifie l’acronyme "SSP" ?  
+Security Service Provider
 
 20 : Dans un fichier Excel, quelles techniques permettent l'exécution de code à l’ouverture de celui-ci ? (2 réponses obligatoires)  
 `DDE / MACRO`
